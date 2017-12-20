@@ -1,0 +1,37 @@
+.sidebar--popup {
+  @include border-radius(0.5 * $space);
+  background: rgba(11, 57, 26, 0.9);
+  color: #fff;
+  font-size: 2vh;
+  width: 38vh;
+  padding-top: 1em;
+  padding-bottom: 7.6vh;
+  height: auto;
+  margin-bottom: 0.1 * $space;
+
+  h2 {
+    font-size: 2.1vh;
+  }
+  p {
+    font-size: 2vh;
+  }
+
+  .btn-close {
+    @include border-radius(2vh);
+    background: rgba(2, 95, 27, 0.9) url('../img/background/btn-close.png') no-repeat center center;
+    background-size: cover;
+    border: 1px solid #6bbc45;
+  }
+
+
+  &.learn-popup {
+    bottom: 11.7vh;
+  }
+
+  &.help-popup {
+    bottom: 3.3vh;
+    min-height: 40vh;
+    padding-top: 10vh;
+  }
+
+}

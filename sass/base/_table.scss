@@ -1,0 +1,17 @@
+table {
+  min-width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px solid $border;
+    padding: 0.5 * $space;
+  }
+
+  th {
+    background-color: $primary;
+    color: $white;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}

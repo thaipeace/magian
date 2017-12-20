@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang=en>
+
+  <head>
+    <title>Shipwrecks of the Great Lakes | Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+
+    <meta name="description" content="An interactive website about shipwrecks around Kingston Ontario, marine archaeology, and diving" />
+    <meta name="keywords" content="Kingston Ontario shipwrecks, Shipwrecks, Great Lakes Shipwrecks, Canadian marine archeology, dive simulation, location of shipwrecks, Marine Museum of the Great Lakes" />
+
+    <meta name="dcterms.title" content="Shipwrecks of the Great Lakes Homepage" />
+    <meta name="dcterms.creator" content="The Marine Museum of the Great Lakes at Kingston" />
+    <meta name="dcterms.subject" title="Shipwrecks of the Great Lakes" content="An interactive website about shipwrecks, marine archaeology, and diving" />
+    <meta name="dcterms.issued" title="W3CDTF" content="" />
+    <meta name="dcterms.modified" title="W3CDTF" content="" />
+    <meta name="dcterms.language" title="ISO639-2/T" content="eng" />
+
+    <script src="vendors/pace/pace.js"></script>
+    <link href="vendors/pace/themes/white/pace-theme-center-radar.css" rel="stylesheet" />
+
+    <link href="css/base-style.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/hotfix.css" rel="stylesheet">
+  </head>
+
+  <body class="body--index">
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <div class="left-logo">
+          <a href="https://www.marmuseum.ca/">
+            <img src="img/Marine_Museum_logo.png" alt="Marine Museum of the Great Lakes at Kingston logo">
+          </a>
+        </div>
+        <div class="right-logo">
+          <a href="http://www.virtualmuseum.ca/" target="_blank">
+            <img src="img/VMC_logo.png" alt="Virtual Museum of Canada logo  ">
+          </a>
+        </div>
+      </div>
+      <div class="sub-header">
+        <div class="lang">
+          <div class="sub-lang">
+            <a class="active" href="">EN</a>/<a href="">FR</a>
+          </div>
+
+          <div class="music-player" id="music-player"></div>
+          <div id="music-player-container">
+            <ul>
+              <li><a class="jp-play" href="#">Play</a></li>
+              <li><a class="jp-pause" href="#">Pause</a></li>
+            </ul>
+          </div>
+          <!-- <button class="muted"><img class="off" src="img/sound_off_icon.png" alt="Turn sound off"><img class="on" src="img/sound_on_icon.png" alt="Turn sound on"></button> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <section class="content index">
+      <div class="container">
+        <div class="col-12">
+          <h1>Shipwrecks of <br>The Great Lakes</h1>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </section>
+
+    <section class="learn-popup sidebar--popup">
+      <button class="close-menu btn-close"></button>
+      <h2>LEARN</h2>
+      <p>
+        Welcome to the Shipwrecks of the Great Lakes virtual exhibit. Some of the world’s most interesting shipwrecks are found in the freshwaters of the Great Lakes.
+      </p>
+      <p>
+        Shipwrecks are a window into a past era that can tell us many important things about Canada’s social, economic and nautical history. But for most of us, the wrecks are hidden and can only be visited by trained divers! This is your chance to explore some of these shipwrecks of the Great Lakes and learn about marine archaeology.
+      </p>
+      <p>Have fun exploring!</p>
+    </section><!-- End learn popup -->
+
+    <section class="help-popup sidebar--popup">
+      <button class="close-menu btn-close"></button>
+      <h2>HELP</h2>
+      <p>
+        Click on the Explore tab to choose an activity. To learn more about this page, select Learn.
+      </p>
+      <br><br><br>
+    </section><!-- End help popup -->
+
+    <section class="menu">
+      <button class="close-menu"></button>
+      <ul>
+        <li class="alone">
+          <a href="explore-wreck-diver.html">WRECK DIVER <img src="img/button_main_wreck_diver.jpg" alt="Wreck Diver Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li class="double">
+          <a href="exploring-hms-st-lawrence.html">EXPLORING<br> HMS ST. LAWRENCE <img src="img/button_main_st_lawrence.jpg" alt="Exploring HMS St. Lawrence Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li class="alone">
+          <a href="explore-charts.html">EXPLORERS’ CHARTS <img src="img/button_main_explorers_charts.jpg" alt="Explorer’s Charts Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li class="double">
+          <a href="mysteries-of-the-depths.html">MYSTERIES<br> OF THE DEPTHS <img src="img/button_main_mysteries.jpg" alt="Mysteries of the Depths Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li>
+          <a href="credits.html">CREDITS</a>
+        </li>
+        <li>
+          <a href="contact-us.html">CONTACT US</a>
+        </li>
+        <li>
+          <a href="sitemap.html">SITEMAP</a>
+        </li>
+      </ul>
+    </section><!-- End menu -->
+
+    <button class="explore"></button>
+    <button class="learn"></button>
+    <button class="help"></button>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="vendors/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery/jquery.mobile-detect.min.js"></script>
+
+    <!-- Player -->
+    <script type="text/javascript" src="vendors/jplayer/jquery.jplayer.min.js"></script>
+
+    <script type="text/javascript" src="js/script.min.js"></script>
+    <script type="text/javascript" src="js/marine.min.js"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript" src="js/hotfix.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-22372114-4"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-22372114-4');
+    </script>
+  </body>
+
+</html>

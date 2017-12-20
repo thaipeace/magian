@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang=en>
+
+  <head>
+    <title>Shipwrecks of the Great Lakes | Explorer’s Charts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+
+    <meta name="description" content="Interactive charts of shipwrecks in the Great Lakes and around Kingston, Ontario" />
+    <meta name="keywords" content="Great Lakes shipwrecks, Kingston shipwreck chart, Great Lakes shipwreck chart, shipwreck map" />
+
+    <meta name="dcterms.title" content="Explorer’s Charts" />
+    <meta name="dcterms.creator" content="The Marine Museum of the Great Lakes at Kingston" />
+    <meta name="dcterms.subject" title="Shipwreck Charts" content="The locations of shipwrecks in the Great Lakes mapped on nautical charts, with descriptions and photos" />
+    <meta name="dcterms.issued" title="W3CDTF" content="" />
+    <meta name="dcterms.modified" title="W3CDTF" content="" />
+    <meta name="dcterms.language" title="ISO639-2/T" content="eng" />
+
+    <script src="vendors/pace/pace.js"></script>
+    <link href="vendors/pace/themes/white/pace-theme-center-radar.css" rel="stylesheet" />
+
+    <!-- sliderPro -->
+    <link rel="stylesheet" href="vendors/slider-pro/css/jquery.sliderPro.min.css">
+
+    <!-- Modal -->
+    <link rel="stylesheet" href="vendors/jquery/jquery.modal.min.css">
+
+    <!-- Tooltipster -->
+    <link rel="stylesheet" href="vendors/jquery-tooltipster/tooltipster.bundle.min.css">
+
+    <link href="css/base-style.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+	<link href="css/hotfix.css" rel="stylesheet">
+  </head>
+
+  <body class="body--explore-charts">
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <div class="left-logo">
+          <a href="https://www.marmuseum.ca/">
+            <img src="img/Marine_Museum_logo.png" alt="Marine Museum of the Great Lakes at Kingston logo">
+          </a>
+        </div>
+        <div class="title">
+          <a href="index.html" title="Homepage">
+            Shipwrecks of the Great Lakes
+          </a>
+        </div>
+        <div class="right-logo">
+          <a href="http://www.virtualmuseum.ca/" target="_blank">
+            <img src="img/VMC_logo.png" alt="Virtual Museum of Canada logo  ">
+          </a>
+        </div>
+      </div>
+      <div class="sub-header">
+        <div class="lang">
+          <div class="sub-lang">
+            <a class="active" href="">EN</a>/<a href="">FR</a>
+          </div>
+
+          <div class="music-player" id="music-player"></div>
+          <div id="music-player-container">
+            <ul>
+              <li><a class="jp-play" href="#">Play</a></li>
+              <li><a class="jp-pause" href="#">Pause</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sub-title">
+          Explorer’s Charts
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <section class="content page--explore-charts">
+      <div class="left-box page--explore-charts-box" data-modal="#enlarged-great-lakes">
+        <div class="left-box-icon-one"></div>
+      </div>
+      <!-- End left box -->
+      <div class="left-box-icon-two"></div>
+
+      <div class="right-box page--explore-charts-box" data-modal="#enlarged-kingston">
+      </div>
+      <!-- End right box -->
+      <div class="right-box-icon-one"></div>
+    </section>
+
+    <div class="content-popup explore-charts--modal-content modal" id="enlarged-great-lakes">
+      <img src="img/explore-charts/explore-map-one-modal.png" />
+      <div title="MONARCH" class="tooltip one" data-modal="#enlarged-great-lakes-location-monarch"></div>
+      <div title="KAMLOOPS" class="tooltip two" data-modal="#enlarged-great-lakes-location-kamloops"></div>
+      <div title="HESPER" class="tooltip three" data-modal="#enlarged-great-lakes-location-Hesper"></div>
+      <div title="MADEIRA" class="tooltip four" data-modal="#enlarged-great-lakes-location-Madeira"></div>
+      <div title="CARL BRADLEY" class="tooltip five" data-modal="#enlarged-great-lakes-location-CarlDBradley"></div>
+      <div title="ALVIN CLARK" class="tooltip six" data-modal="#enlarged-great-lakes-location-AlvinClark"></div>
+      <div title="FRANK O'CONNOR" class="tooltip sevent" data-modal="#enlarged-great-lakes-location-frankoconnor"></div>
+      <div title="WAUBUNO" class="tooltip eight" data-modal="#enlarged-great-lakes-location-Waubuno"></div>
+      <div title="MORREL" class="tooltip nine" data-modal="#enlarged-great-lakes-location-morrel"></div>
+      <div title="CHARLES PRICE" class="tooltip ten" data-modal="#enlarged-great-lakes-location-charleprice"></div>
+      <div title="ONTARIO" class="tooltip elevent" data-modal="#enlarged-great-lakes-location-ontario"></div>
+      <div title="MILAN" class="tooltip twelve" data-modal="#enlarged-great-lakes-location-Milan"></div>
+      <div title="THREE BROTHERS" class="tooltip thirdteen" data-modal="#enlarged-great-lakes-location-Brothers"></div>
+      <div title="ROBERVAL" class="tooltip fourteen" data-modal="#enlarged-great-lakes-location-Roberval"></div>
+      <div title="COLGATE" class="tooltip fithteen" data-modal="#enlarged-great-lakes-colgate"></div>
+      <div title="GRIFFITH" class="tooltip sixteen" data-modal="#enlarged-great-lakes-griff"></div>
+      <div title="ADMIRAL" class="tooltip seventeen" data-modal="#enlarged-great-lakes-admiral"></div>
+      <div title="ARGO" class="tooltip eightteen" data-modal="#enlarged-great-lakes-arco"></div>
+    </div>
+    <!-- End left modal -->
+
+    <!-- MORNARCH -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-monarch">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <!-- MONARCH -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Monarch</h1>
+                  <p class="field"><label>Ship Type:</label> Freight steamer</p>
+                  <p class="field"><label>Date sunk:</label> November 6, 1906</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Monarch foundered when it crashed headlong into a solid rock wall on the tip of Isle Royale during a snowstorm on its last trip of the season. All men but one managed to make it to shore, where they survived for four days while awaiting
+                    rescue.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Monarch_1.jpg" alt="The SS Monarch on the water. Black smoke billows from the ship’s stack." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Monarch</h1>
+                  <p class="field"><label>Ship Type:</label> Freight steamer</p>
+                  <p class="field"><label>Date sunk:</label> November 6, 1906</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Monarch foundered when it crashed headlong into a solid rock wall on the tip of Isle Royale during a snowstorm on its last trip of the season. All men but one managed to make it to shore, where they survived for four days while awaiting
+                    rescue.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Monarch_2.jpg" alt="The wreck of the SS Monarch. Ropes, gears, and loose timbers are visible alongside a diver" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END MORNARCH-->
+
+    <!-- Kamloops -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-kamloops">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">SS Kamloops</h1>
+                  <p class="field"><label>Ship Type:</label> Freight</p>
+                  <p class="field"><label>Date sunk:</label> December 7, 1927</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The SS Kamloops was built specifically for travel within the Great Lakes, designed to fit in the tight confines of the Welland Canal. As part of the Canada Steamship Lines fleet, it delivered cargo between ports on the Great Lakes and
+                    St. Lawrence River. It foundered in a winter storm, and remained undiscovered for 50 years.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Kamloops_1.jpg" alt="The SS Kamloops on the water, viewed from the side" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">SS Kamloops</h1>
+                  <p class="field"><label>Ship Type:</label> Freight</p>
+                  <p class="field"><label>Date sunk:</label> December 7, 1927</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The SS Kamloops was built specifically for travel within the Great Lakes, designed to fit in the tight confines of the Welland Canal. As part of the Canada Steamship Lines fleet, it delivered cargo between ports on the Great Lakes and
+                    St. Lawrence River. It foundered in a winter storm, and remained undiscovered for 50 years.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Kamloops_2.jpg" alt="Drawing of the Shipwreck " SS Kamloops ""/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Kamloops-->
+
+    <!-- Hesper -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-Hesper">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Hesper</h1>
+                  <p class="field"><label>Ship Type:</label> Bulk freight steamer</p>
+                  <p class="field"><label>Date sunk:</label> May 4, 1905</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Launched in 1890, the Hesper was a wooden-hulled steamer primarily used to transport iron ore and grain. It was caught in a spring storm and foundered on a reef. No lives were lost, but the wreck was considered a total loss.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Hesper_1.jpg" alt="The Hesper at a dock" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Hesper</h1>
+                  <p class="field"><label>Ship Type:</label> Bulk freight steamer</p>
+                  <p class="field"><label>Date sunk:</label> May 4, 1905</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Launched in 1890, the Hesper was a wooden-hulled steamer primarily used to transport iron ore and grain. It was caught in a spring storm and foundered on a reef. No lives were lost, but the wreck was considered a total loss.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Hesper_2.jpg" alt="The Hesper at a dock, viewed from the starboard bow" />
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Hesper</h1>
+                  <p class="field"><label>Ship Type:</label> Bulk freight steamer</p>
+                  <p class="field"><label>Date sunk:</label> May 4, 1905</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Launched in 1890, the Hesper was a wooden-hulled steamer primarily used to transport iron ore and grain. It was caught in a spring storm and foundered on a reef. No lives were lost, but the wreck was considered a total loss.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Hesper_3.jpg" alt="The Hesper on the water, viewed in profile" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Hesper-->
+
+    <!-- Madeira -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-Madeira">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Madeira</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner-barge</p>
+                  <p class="field"><label>Date sunk:</label> November 28, 1905</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Three major storms occurred on the Great Lakes in 1905: on September 2nd, October 20th, and November 28th. Ten ships sank in these storms on Lakes Superior, Huron, and Erie, with many more damaged. The Madeira was being towed by a steamship,
+                    but was cut loose in the storm and crashed into a cliff.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Madeira_1.jpg" alt="The Madeira with sails furled, alongside a smaller steam ship." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Madeira</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner-barge</p>
+                  <p class="field"><label>Date sunk:</label> November 28, 1905</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Three major storms occurred on the Great Lakes in 1905: on September 2nd, October 20th, and November 28th. Ten ships sank in these storms on Lakes Superior, Huron, and Erie, with many more damaged. The Madeira was being towed by a steamship,
+                    but was cut loose in the storm and crashed into a cliff.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Madeira_2.jpg" alt="Colour photo of the wreck of the Madeira, as viewed from above from a nearby cliff" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Madeira-->
+
+    <!-- Carl D. Bradley -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-CarlDBradley">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Carl D. Bradley</h1>
+                  <p class="field"><label>Ship Type:</label> Self-unloading freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 18, 1958</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Carl D. Bradley was headed for winter dry dock maintenance when it was caught in a violent storm. The ship broke in two, and all but two of its crew perished. It is the second-longest shipwreck in the Great Lakes, at 639 feet (195
+                    metres), after the SS Edmund Fitzgerald.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Bradley_1.jpg" alt="Aerial view of the Carl D. Bradley as it moves forward on the water." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Carl D. Bradley</h1>
+                  <p class="field"><label>Ship Type:</label> Self-unloading freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 18, 1958</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Carl D. Bradley was headed for winter dry dock maintenance when it was caught in a violent storm. The ship broke in two, and all but two of its crew perished. It is the second-longest shipwreck in the Great Lakes, at 639 feet (195
+                    metres), after the SS Edmund Fitzgerald.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Bradley_2.jpg" alt="The self-unloader of the Carl D. Bradley as it empties its cargo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Carl D. Bradley-->
+
+    <!-- Alvin Clark -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-AlvinClark">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Alvin Clark</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner</p>
+                  <p class="field"><label>Date sunk:</label> June 29, 1864</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Alvin Clark was raised intact in 1969, and set up as a tourist attraction in a nearby town. However, no preservation measures were put in place, and the ship and its contents rapidly deteriorated once exposed to air. Its remains
+                    were demolished in 1994. The story of the Alvin Clark illustrates the importance of preservation and conservation of shipwrecks.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Clark_1.jpg" alt="The Alvin Clark at a dock, after it was raised. Viewed from just off the bow of the ship." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Alvin Clark</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner</p>
+                  <p class="field"><label>Date sunk:</label> June 29, 1864</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Alvin Clark was raised intact in 1969, and set up as a tourist attraction in a nearby town. However, no preservation measures were put in place, and the ship and its contents rapidly deteriorated once exposed to air. Its remains
+                    were demolished in 1994. The story of the Alvin Clark illustrates the importance of preservation and conservation of shipwrecks.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Clark_2.jpg" alt="Monochromatic photo of the Alvin Clark at a dock after it was raised. Several people stand on the dock and look at the ship" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Alvin Clark-->
+
+    <!--Frank O’Connor -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-frankoconnor">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Frank O’Connor</h1>
+                  <p class="field"><label>Ship Type:</label> Wooden steamer</p>
+                  <p class="field"><label>Date sunk:</label> October 2, 1919</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Frank O’Connor was one of the largest wooden ships to ever travel on the Great Lakes, at 301 feet (92 metres) long. The hull was strengthened with iron and steel strapping, and the ship was powered by a modern steam engine. It caught
+                    fire on its way to Milwaukee, WI, and though the ship sank, all crew members survived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_FRANKOCONNOR_1.jpg" alt="The propellor of the wreck of the Frank O’Connor." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Frank O’Connor</h1>
+                  <p class="field"><label>Ship Type:</label> Wooden steamer</p>
+                  <p class="field"><label>Date sunk:</label> October 2, 1919</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Frank O’Connor was one of the largest wooden ships to ever travel on the Great Lakes, at 301 feet (92 metres) long. The hull was strengthened with iron and steel strapping, and the ship was powered by a modern steam engine. It caught
+                    fire on its way to Milwaukee, WI, and though the ship sank, all crew members survived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_FRANKOCONNOR_2.jpg" alt="The Frank O’Connor as it exits a lock." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Frank O’Connor-->
+
+    <!--Waubuno -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-Waubuno">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Waubuno</h1>
+                  <p class="field"><label>Ship Type:</label> Sidewheel paddle steamer</p>
+                  <p class="field"><label>Date sunk:</label> November 22, 1879</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Waubuno was carrying a heavy load of freight and passengers when it was caught in a storm and foundered. Approximately 30 people were on board, all of whom perished. The wreck, located in shallow water in eastern Georgian Bay, is
+                    a popular dive site.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Waubuno_1.jpg" alt="The Waubuno viewed from the side." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Waubuno</h1>
+                  <p class="field"><label>Ship Type:</label> Sidewheel paddle steamer</p>
+                  <p class="field"><label>Date sunk:</label> November 22, 1879</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Waubuno was carrying a heavy load of freight and passengers when it was caught in a storm and foundered. Approximately 30 people were on board, all of whom perished. The wreck, located in shallow water in eastern Georgian Bay, is
+                    a popular dive site.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Waubuno_2.jpg" alt="The Waubuno, docked and viewed from the side. Men stand along a rail on the ship." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Waubuno-->
+
+    <!--Daniel J. Morrell -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-morrel">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Daniel J. Morrell</h1>
+                  <p class="field"><label>Ship Type:</label> Bulk freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 29, 1966</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>A freighter that had been used on the Great Lakes for 60 years, the Daniel J. Morrell got caught in a violent storm and broke in two pieces. As the bow sank, the stern continued steaming before sinking five miles away. Only one person
+                    in the 29-man crew survived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Morrell_1.jpg" alt="The Daniel J. Morrell on water." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Daniel J. Morrell</h1>
+                  <p class="field"><label>Ship Type:</label> Bulk freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 29, 1966</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>A freighter that had been used on the Great Lakes for 60 years, the Daniel J. Morrell got caught in a violent storm and broke in two pieces. As the bow sank, the stern continued steaming before sinking five miles away. Only one person
+                    in the 29-man crew survived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Morrell_2.jpg" alt="The Daniel J. Morrell on calm water. Black smoke billows from the ship’s stack." />
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Daniel J. Morrell</h1>
+                  <p class="field"><label>Ship Type:</label> Bulk freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 29, 1966</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>A freighter that had been used on the Great Lakes for 60 years, the Daniel J. Morrell got caught in a violent storm and broke in two pieces. As the bow sank, the stern continued steaming before sinking five miles away. Only one person
+                    in the 29-man crew survived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Morrell_3.jpg" alt="Colour photo of the Daniel J. Morrell on water." />
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Daniel J. Morrell</h1>
+                  <p class="field"><label>Ship Type:</label> Bulk freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 29, 1966</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>A freighter that had been used on the Great Lakes for 60 years, the Daniel J. Morrell got caught in a violent storm and broke in two pieces. As the bow sank, the stern continued steaming before sinking five miles away. Only one person
+                    in the 29-man crew survived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Morrell_4.jpg" alt="Colour photo of the Daniel J. Morrell on water." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Daniel J. Morrell-->
+
+    <!--Charles S. Price -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-charleprice">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Charles S. Price</h1>
+                  <p class="field"><label>Ship Type:</label> Cargo freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 9, 1913</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Charles S. Price was one of eight ships lost with all hands in lower Lake Huron in the infamous Great Storm of 1913. This storm, which ravaged Lakes Superior, Michigan, Huron, and Erie, lasted three days, from November 8-10. In total, 67 ships were lost or damaged, and at least 248 lives lost.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Price_1.jpg" alt="A small portion of an overturned hull that extends out of the water" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Charles S. Price</h1>
+                  <p class="field"><label>Ship Type:</label> Cargo freighter</p>
+                  <p class="field"><label>Date sunk:</label> November 9, 1913</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>TThe Charles S. Price was one of eight ships lost with all hands in lower Lake Huron in the infamous Great Storm of 1913. This storm, which ravaged Lakes Superior, Michigan, Huron, and Erie, lasted three days, from November 8-10. In
+                    total, 67 ships were lost or damaged, and at least 248 lives lost.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Price_2.jpg" alt="The Charles S. Price on the water, viewed from the side" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Charles S. Price-->
+
+    <!-- HMS Ontario -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-ontario">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">HMS Ontario</h1>
+                  <p class="field"><label>Ship Type:</label> 22-gun 2-masted brig-sloop</p>
+                  <p class="field"><label>Date sunk:</label> October 31, 1780</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>During the Revolutionary War, HMS Ontario was the largest British warship to sail on the Great Lakes. It was launched just five months before it sank, and was used to ferry troops, supplies, and prisoners. It never saw battle.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Ontario_1.jpg" alt="The bow of the wreck HMS Ontario" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">HMS Ontario</h1>
+                  <p class="field"><label>Ship Type:</label> 22-gun 2-masted brig-sloop</p>
+                  <p class="field"><label>Date sunk:</label> October 31, 1780</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>During the Revolutionary War, HMS Ontario was the largest British warship to sail on the Great Lakes. It was launched just five months before it sank, and was used to ferry troops, supplies, and prisoners. It never saw battle.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Ontario_2.jpg" alt="The stern of the wreck HMS Ontario" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END HMS Ontario -->
+
+    <!-- Milan -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-Milan">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Milan</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner</p>
+                  <p class="field"><label>Date sunk:</label> October 13, 1849</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Built in 1845, the Milan sprung a leak while on its way from Oswego, NY to Cleveland, OH with a cargo of 1000 barrels of salt. The crew tried unsuccessfully to pump out the inflowing water and make it to shore, but eventually had to
+                    abandon ship. Nine crew members and a Newfoundland dog were on board the Milan, all of whom were safely rescued by a passing ship.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Milan_1.jpg" alt="The wreck of the Milan, showing the deck near the bow from above. One mast still stands upright." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Milan</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner</p>
+                  <p class="field"><label>Date sunk:</label> October 13, 1849</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Built in 1845, the Milan sprung a leak while on its way from Oswego, NY to Cleveland, OH with a cargo of 1000 barrels of salt. The crew tried unsuccessfully to pump out the inflowing water and make it to shore, but eventually had to
+                    abandon ship. Nine crew members and a Newfoundland dog were on board the Milan, all of whom were safely rescued by a passing ship.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Milan_2.jpg" alt="The bow of the wreck of the Milan" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Milan -->
+
+    <!-- Brothers -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-Brothers">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Three Brothers</h1>
+                  <p class="field"><label>Ship Type:</label> Dagger-board schooner</p>
+                  <p class="field"><label>Date sunk:</label> November 12, 1833</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Dagger-board schooners were used in the Great Lakes in the early 19th century. A board extending through the hull acted as a keel in rough waters, but could be removed to bring the ship close to shore. Three Brothers was the first fully-functional
+                    ship of this type ever found.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_ThreeBrothers_1.jpg" alt="Painting of the wreck of the Three Brothers" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Three Brothers</h1>
+                  <p class="field"><label>Ship Type:</label> Dagger-board schooner</p>
+                  <p class="field"><label>Date sunk:</label> November 12, 1833</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Dagger-board schooners were used in the Great Lakes in the early 19th century. A board extending through the hull acted as a keel in rough waters, but could be removed to bring the ship close to shore. Three Brothers was the first fully-functional
+                    ship of this type ever found.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_ThreeBrothers_2.jpg" alt="The wreck of the Three Brothers" />
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Three Brothers</h1>
+                  <p class="field"><label>Ship Type:</label> Dagger-board schooner</p>
+                  <p class="field"><label>Date sunk:</label> November 12, 1833</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Dagger-board schooners were used in the Great Lakes in the early 19th century. A board extending through the hull acted as a keel in rough waters, but could be removed to bring the ship close to shore. Three Brothers was the first fully-functional
+                    ship of this type ever found.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_ThreeBrothers_3.jpg" alt="The bow of the wreck of the Three Brothers" />
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Three Brothers</h1>
+                  <p class="field"><label>Ship Type:</label> Dagger-board schooner</p>
+                  <p class="field"><label>Date sunk:</label> November 12, 1833</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Dagger-board schooners were used in the Great Lakes in the early 19th century. A board extending through the hull acted as a keel in rough waters, but could be removed to bring the ship close to shore. Three Brothers was the first fully-functional
+                    ship of this type ever found.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_ThreeBrothers_4.jpg" alt="The wreck of the Three Brothers, viewed from the bow down the length of the ship" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Brothers -->
+
+    <!-- Roberval -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-location-Roberval">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Roberval</h1>
+                  <p class="field"><label>Ship Type:</label> Steamship</p>
+                  <p class="field"><label>Date sunk:</label> September 25, 1916</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Roberval made frequent trips between Ottawa, ON and Oswego, NY in the early 20th century to exchange coal and lumber. The large load of spruce it was carrying when it sank saved four people, as they managed to stay afloat on a raft
+                    of lumber until help arrived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Roberval_1.jpg" alt="The Roberval billowing black smoke on the water while in service, circa early 1900s." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Roberval</h1>
+                  <p class="field"><label>Ship Type:</label> Steamship</p>
+                  <p class="field"><label>Date sunk:</label> September 25, 1916</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Roberval made frequent trips between Ottawa, ON and Oswego, NY in the early 20th century to exchange coal and lumber. The large load of spruce it was carrying when it sank saved four people, as they managed to stay afloat on a raft
+                    of lumber until help arrived.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Roberval_2.jpg" alt="Painting of The Roberval." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Roberval -->
+
+    <!-- James B. Colgate -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-colgate">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">James B. Colgate</h1>
+                  <p class="field"><label>Ship Type:</label> Whaleback steamer</p>
+                  <p class="field"><label>Date sunk:</label> October 20, 1916</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Whaleback steamers have hulls that curve above the waterline, designed to reduce the impact of waves on the sides of the ship. On October 20, 1916, a massive storm swept over Lake Erie, sinking four ships including the James B. Colgate
+                    and killing 49 people. It later became known as Black Friday.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Colgate_1b.jpg" alt="The ship whaleback steamer James B. Colgate on water." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">James B. Colgate</h1>
+                  <p class="field"><label>Ship Type:</label> Whaleback steamer</p>
+                  <p class="field"><label>Date sunk:</label> October 20, 1916</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Whaleback steamers have hulls that curve above the waterline, designed to reduce the impact of waves on the sides of the ship. On October 20, 1916, a massive storm swept over Lake Erie, sinking four ships including the James B. Colgate
+                    and killing 49 people. It later became known as Black Friday.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Colgate_3.jpg" alt="The ship whaleback steamer James B. Colgate on water." />
+              </div>
+            </div>
+          </div>
+
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">James B. Colgate</h1>
+                  <p class="field"><label>Ship Type:</label> Whaleback steamer</p>
+                  <p class="field"><label>Date sunk:</label> October 20, 1916</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>Whaleback steamers have hulls that curve above the waterline, designed to reduce the impact of waves on the sides of the ship. On October 20, 1916, a massive storm swept over Lake Erie, sinking four ships including the James B. Colgate
+                    and killing 49 people. It later became known as Black Friday.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Colgate_4.jpg" alt="The ship whaleback steamer James B. Colgate on water." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END James B. Colgate -->
+
+    <!-- G P Griffith -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-griff">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">G P Griffith</h1>
+                  <p class="field"><label>Ship Type:</label> Passenger steamship</p>
+                  <p class="field"><label>Date sunk:</label> June 17, 1850</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The G P Griffith was carrying 326 passengers when the ship caught fire in the night and struck a sandbar while attempting to get to shore. Though it was only half a mile from shore, most passengers could not swim and subsequently drowned.
+                    Death toll estimates range from 250 to 295 people, making this the third-greatest loss of life in any Great Lakes shipping disaster.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Griffith_1.jpg" alt="Etching of the “SS G. P. Griffith”" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">G P Griffith</h1>
+                  <p class="field"><label>Ship Type:</label> Passenger steamship</p>
+                  <p class="field"><label>Date sunk:</label> June 17, 1850</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The G P Griffith was carrying 326 passengers when the ship caught fire in the night and struck a sandbar while attempting to get to shore. Though it was only half a mile from shore, most passengers could not swim and subsequently drowned.
+                    Death toll estimates range from 250 to 295 people, making this the third-greatest loss of life in any Great Lakes shipping disaster.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Griffith_2.jpg" alt="Photo of “SS G. P. Griffith” historical marker" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END G P Griffith -->
+
+    <!-- Admiral -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-admiral">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Admiral</h1>
+                  <p class="field"><label>Ship Type:</label> Tugboat</p>
+                  <p class="field"><label>Date sunk:</label> December 2, 1942</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Admiral was towing a tanker barge, the Cleveco, from Toledo to Cleveland when it encountered a winter storm. The Admiral foundered and the Cleveco was left without propulsion. Rescue ships were unable to locate the Cleveco; it is
+                    believed to have sunk while awaiting assistance. </p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Admiral_1.jpg" alt="Black and white photo of the steamship Admiral. Several people stand on the deck." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+        </div>
+      </div>
+    </div>
+    <!-- END Admiral -->
+
+    <!-- Argo -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-great-lakes-arco">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Argo</h1>
+                  <p class="field"><label>Ship Type:</label> Barge</p>
+                  <p class="field"><label>Date sunk:</label> October 20, 1937</p>
+                </div>
+
+                <div class="explore-charts--header-right">
+                  <p>The Argo was carrying crude oil and benzol when it foundered in a storm. In 2015, 78 years after it sank, it was found to be leaking hazardous chemicals into Lake Erie. A cleanup response was completed, removing all of the remaining
+                    chemicals from the wreck.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Great_Lakes/Great_Lakes_Chart_Argo_1.jpg" alt="Monochromatic side-scan sonar image of the wreck of the Argo on the lake bottom, viewed from above." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+        </div>
+      </div>
+    </div>
+    <!-- END Argo -->
+
+    <!-- KINGSTON -->
+    <div class="content-popup explore-charts--modal-content modal" id="enlarged-kingston">
+      <img src="img/explore-charts/explore-map-two-modal.png" />
+      <div title="WOLFE ISLANDER II" class="tooltip one" data-modal="#enlarged-kingston-wolfe"></div>
+      <div title="PRINCE REGENT" class="tooltip two" data-modal="#enlarged-kingston-prince"></div>
+      <div title="ST. LAWRENCE" class="tooltip three" data-modal="#enlarged-kingston-lawrence"></div>
+      <div title="KPH" class="tooltip four" data-modal="#enlarged-kingston-kph"></div>
+      <div title="HORACE TABER" class="tooltip five" data-modal="#enlarged-kingston-taber"></div>
+      <div title="EFFIE MAE" class="tooltip six" data-modal="#enlarged-kingston-effie"></div>
+      <div title="ALOHA" class="tooltip sevent" data-modal="#enlarged-kingston-aloha"></div>
+      <div title="COMET" class="tooltip eight" data-modal="#enlarged-kingston-comet"></div>
+      <div title="GEORGE T DAVIE" class="tooltip nine" data-modal="#enlarged-kingston-george"></div>
+    </div>
+    <!-- End right modal -->
+
+    <!-- Wolfe Islander II -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-wolfe">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Wolfe Islander II</h1>
+                  <p class="field"><label>Ship Type:</label> Ferry</p>
+                  <p class="field"><label>Date sunk:</label> September 21, 1985</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>After almost 30 years ferrying vehicles between Kingston and Wolfe Island, the Wolfe Islander II was scuttled to create a dive site, the first such use of a commercial vessel in the Great Lakes. Since then, it has become the most-visited
+                    shipwreck in Lake Ontario.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Wolfe_Islander_01.jpg" alt="The Wolfe Islander II on the water as it ferries cars." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Wolfe Islander II</h1>
+                  <p class="field"><label>Ship Type:</label> Ferry</p>
+                  <p class="field"><label>Date sunk:</label> September 21, 1985</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>After almost 30 years ferrying vehicles between Kingston and Wolfe Island, the Wolfe Islander II was scuttled to create a dive site, the first such use of a commercial vessel in the Great Lakes. Since then, it has become the most-visited
+                    shipwreck in Lake Ontario.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Wolfe_Islander_02.jpg" alt="Two divers on the wreck of the Wolfe Islander II, in the middle of the ship. A motorcycle stands on the deck below the divers." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Wolfe Islander II -->
+
+    <!-- HMS Prince Regent -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-prince">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">HMS Prince Regent</h1>
+                  <p class="field"><label>Ship Type:</label> Frigate</p>
+                  <p class="field"><label>Date sunk:</label> Mid-1830s</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>The HMS Prince Regent was a British warship that patrolled Lake Ontario during the War of 1812. It was built in Kingston at the Royal Naval Dockyards, where it was launched in April 1814. It had little use after the war, and was put
+                    up for sale in the early 1830s, but no buyer was found and it eventually sank in Deadman Bay.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_HMS_Prince_Regent_1.jpg" alt="The remains of the hull of the HMS Prince Regent. Wooden planks run in parallel, most of which have zebra mussels on them." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">HMS Prince Regent</h1>
+                  <p class="field"><label>Ship Type:</label> Frigate</p>
+                  <p class="field"><label>Date sunk:</label> Mid-1830s</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>The HMS Prince Regent was a British warship that patrolled Lake Ontario during the War of 1812. It was built in Kingston at the Royal Naval Dockyards, where it was launched in April 1814. It had little use after the war, and was put
+                    up for sale in the early 1830s, but no buyer was found and it eventually sank in Deadman Bay.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_HMS_Prince_Regent_2.jpg" alt="The remains of the hull of the HMS Prince Regent. Wooden planks are covered in algae and zebra mussels." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END HMS Prince Regent -->
+
+    <!-- HMS St. Lawrence -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-lawrence">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">HMS St. Lawrence</h1>
+                  <p class="field"><label>Type:</label> Brig</p>
+                  <p class="field"><label>Date sunk:</label> Unknown; abandoned 19th century</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>The HMS St. Lawrence is considered the largest sailing war vessel ever to sail the Great Lakes. Launched in September 1814 for use in the War of 1812, the ship carried 102 guns and could support almost 1,000 men. The St. Lawrence never
+                    saw battle.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_St_Lawrence_01.jpg" alt="Detail of the wreck of the HMS St. Lawrence. Algae grows on the few remaining planks of wood of the hull" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">HMS St. Lawrence</h1>
+                  <p class="field"><label>Ship Type:</label> Brig</p>
+                  <p class="field"><label>Date sunk:</label> Unknown; abandoned 19th century</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>The HMS St. Lawrence is considered the largest sailing war vessel ever to sail the Great Lakes. Launched in September 1814 for use in the War of 1812, the ship carried 102 guns and could support almost 1,000 men. The St. Lawrence never
+                    saw battle.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_St_Lawrence_02.jpg" alt="The wreck of the HMS St. Lawrence. Aquatic plants grow between parallel wooden boards" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END HMS St. Lawrence -->
+
+    <!-- KPH -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-kph">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">KPH</h1>
+                  <p class="field"><label>Ship Type:</label> Barge</p>
+                  <p class="field"><label>Date sunk:</label> Unknown</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>The KPH wreck, named for its proximity to the Kingston Psychiatric Hospital, is a well-known dive site in Kingston. It is believed that the wreck may be the remains of the Waterlily, a steam barge that was constructed in 1870 and operated
+                    until at least 1916.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_KPH_01.jpg" alt="The ship Waterlily on the water with a full load of barrels on the deck and several men standing aboard." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">KPH</h1>
+                  <p class="field"><label>Ship Type:</label> Barge</p>
+                  <p class="field"><label>Date sunk:</label> Unknown</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>The KPH wreck, named for its proximity to the Kingston Psychiatric Hospital, is a well-known dive site in Kingston. It is believed that the wreck may be the remains of the Waterlily, a steam barge that was constructed in 1870 and operated
+                    until at least 1916.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_KPH_02.jpg" alt="The bow of the KPH wreck on the lake bottom" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END KPH -->
+
+    <!-- Horace Taber -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-taber">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Horace Taber</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner</p>
+                  <p class="field"><label>Date sunk:</label> November 27, 1922</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>Constructed in St. Clair, MI in 1867, the Horace Taber became a Canadian vessel in 1911. It was headed to Kingston with a load of coal in late 1922 when it got caught in a snow storm and ran ashore. Though the ship was a complete wreck,
+                    the cargo was salvaged.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_HoraceTaber_1.jpg" alt="A three-masted schooner at a dock in Kingston." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+        </div>
+      </div>
+    </div>
+    <!-- END Horace Taber -->
+
+    <!-- Effie Mae -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-effie">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Effie Mae</h1>
+                  <p class="field"><label>Ship Type:</label> Scuba charter boat</p>
+                  <p class="field"><label>Date sunk:</label> October 17, 1993</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>From ca. 1980 to 1992, the Effie Mae was used as a live-aboard charter ship for scuba diving. In the early-1990s, the ship’s owners were moving out of Ontario and donated the vessel to Preserve Our Wrecks Kingston. The ship was scuttled
+                    next to the schooner-barge Aloha in approximately 17 metres of water, and remains a popular dive site.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Effie_May_01.jpg" alt="The wreck of the Effie Mae, viewed from the bow. The silhouette of a diver is visible in the background." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Effie Mae</h1>
+                  <p class="field"><label>Ship Type:</label> Scuba charter boat</p>
+                  <p class="field"><label>Date sunk:</label> October 17, 1993</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>From ca. 1980 to 1992, the Effie Mae was used as a live-aboard charter ship for scuba diving. In the early-1990s, the ship’s owners were moving out of Ontario and donated the vessel to Preserve Our Wrecks Kingston. The ship was scuttled
+                    next to the schooner-barge Aloha in approximately 17 metres of water, and remains a popular dive site.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Effie_May_02.jpg" alt="A diver in the wreck of the Effie Mae. The diver’s upper body sticks out of an open door or window in the wreck." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Effie Mae -->
+
+    <!-- Aloha -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-aloha">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Aloha</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner barge</p>
+                  <p class="field"><label>Date sunk:</label> October 28, 1917</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>Built in 1888, the Aloha was being towed to Kingston with a load of 925 tons of coal when it was caught in a storm and foundered. The tug towing the ship, the Chamberlain, managed to save some of the crew, though the captain of the Aloha
+                    drowned.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Aloha_1.jpg" alt="The wreck of the Aloha, with the ship's boiler in the foreground and a diver beside it." />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Aloha</h1>
+                  <p class="field"><label>Ship Type:</label> Schooner barge</p>
+                  <p class="field"><label>Date sunk:</label> October 28, 1917</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>Built in 1888, the Aloha was being towed to Kingston with a load of 925 tons of coal when it was caught in a storm and foundered. The tug towing the ship, the Chamberlain, managed to save some of the crew, though the captain of the Aloha
+                    drowned.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Aloha_2.jpg" alt="Detail of a diver and the bow of the Aloha. The bow is mostly covered by zebra mussels, though roman numerals are visible in some places underneath." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Aloha -->
+
+    <!-- Comet -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-comet">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Comet</h1>
+                  <p class="field"><label>Ship Type:</label> Sidewheel steamer</p>
+                  <p class="field"><label>Date sunk:</label> May 14, 1861</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>Built in 1848, the Comet foundered and was raised and repaired several times in its life. It struck a shoal in its first few trips and sank, then in 1851 its boiler exploded, tearing a hole in its hull and sinking again. After several
+                    more accidents, it was caught in a storm and struck another ship. Taking on water, passengers and crew abandoned ship, leaving the Comet to sink for the last time.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Comet_01.jpg" alt="The wreck of the Comet, viewed from mid-ship to highlight two large paddlewheels on the sides of the ship" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">Comet</h1>
+                  <p class="field"><label>Ship Type:</label> Sidewheel steamer</p>
+                  <p class="field"><label>Date sunk:</label> May 14, 1861</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>Built in 1848, the Comet foundered and was raised and repaired several times in its life. It struck a shoal in its first few trips and sank, then in 1851 its boiler exploded, tearing a hole in its hull and sinking again. After several
+                    more accidents, it was caught in a storm and struck another ship. Taking on water, passengers and crew abandoned ship, leaving the Comet to sink for the last time.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_Comet_02.jpg" alt="The wreck of the Cornwall. A large paddlewheel is visible in the foreground, while a diver examines it in the background" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END Comet -->
+
+    <!-- George T. Davie -->
+    <div class="block--content content-popup explore-charts-map-location-modal modal" id="enlarged-kingston-george">
+      <button class="close-menu btn-close"></button>
+      <div class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">George T. Davie</h1>
+                  <p class="field"><label>Ship Type:</label> Barge</p>
+                  <p class="field"><label>Date sunk:</label> April 18, 1945</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>Built in 1898, the George T. Davie spent 47 years hauling coal and grain on Lake Ontario and the St. Lawrence River. On a routine trip delivering coal from Oswego, NY to Kingston, the ship began leaking and sank. All crew members were
+                    picked up by the tug Salvage Prince, which had been towing the ship.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_GeorgeTDavie_1.jpg" alt="A diver shines a flashlight on the wheel of the wreck of the George T. Davie" />
+              </div>
+            </div>
+          </div>
+          <!-- end slide 1 -->
+          <div class="sp-slide">
+            <div class="sp-layer sp-static mysteries-depths--slider-information" data-position="topLeft" data-horizontal="0" data-vertical="0" data-width="30%">
+              <div class="explore-charts--header">
+                <div class="explore-charts--header-left">
+                  <h1 class="mysteries-depths--slider-title">George T. Davie</h1>
+                  <p class="field"><label>Ship Type:</label> Barge</p>
+                  <p class="field"><label>Date sunk:</label> April 18, 1945</p>
+                </div>
+                <div class="explore-charts--header-right">
+                  <p>Built in 1898, the George T. Davie spent 47 years hauling coal and grain on Lake Ontario and the St. Lawrence River. On a routine trip delivering coal from Oswego, NY to Kingston, the ship began leaking and sank. All crew members were
+                    picked up by the tug Salvage Prince, which had been towing the ship.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sp-layer sp-static mysteries-depths--slider-image" data-horizontal="30%" data-vertical="0" data-width="70%">
+              <div class="sp-thumbnail-container">
+                <img src="figures/explore-charts/Kingston/Kingston_Chart_GeorgeTDavie_2.jpg" alt="A diver above the remains of a lifeboat. The hull of the George T. Davie sits in the background." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END George T. Davie -->
+
+    <!-- POP UP -->
+    <section class="learn-popup sidebar--popup">
+      <button class="close-menu btn-close"></button>
+      <h1 class="mysteries-depths--slider-title">LEARN</h1>
+      <p>The bottom of the Great Lakes is the resting place for thousands of ships that have sunk over the last 400 years. </p>
+      <p>These shipwrecks can be found across all five Great Lakes, including many in eastern Lake Ontario near Kingston.</p>
+      <p>Each shipwreck is like a time capsule of history from the time the ship was built and sunk. Most of us will never get to visit these wrecks, but luckily many professional and recreational divers have made the journey and brought back photos.</p>
+    </section>
+    <!-- End learn popup -->
+
+    <section class="help-popup sidebar--popup">
+      <button class="close-menu btn-close"></button>
+      <h1 class="mysteries-depths--slider-title">HELP</h1>
+      <p>Select a nautical chart to explore some of the wrecks around Kingston’s shores, or a variety of wrecks across all of the Great Lakes. Once a chart is opened, click on the wreck icons to learn more about individual wrecks.</p>
+      <br><br><br>
+    </section>
+    <!-- End help popup -->
+
+    <section class="menu">
+      <button class="close-menu"></button>
+      <ul>
+        <li class="alone">
+          <a href="explore-wreck-diver.html">WRECK DIVER <img src="img/button_main_wreck_diver.jpg" alt="Wreck Diver Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li class="double">
+          <a href="exploring-hms-st-lawrence.html">EXPLORING<br> HMS ST. LAWRENCE <img src="img/button_main_st_lawrence.jpg" alt="Exploring HMS St. Lawrence Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li class="alone">
+          <a href="explore-charts.html">EXPLORERS’ CHARTS <img src="img/button_main_explorers_charts.jpg" alt="Explorer’s Charts Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li class="double">
+          <a href="mysteries-of-the-depths.html">MYSTERIES<br> OF THE DEPTHS <img src="img/button_main_mysteries.jpg" alt="Mysteries of the Depths Activity"></a>
+          <div class="clearfix"></div>
+        </li>
+        <li>
+          <a href="credits.html">CREDITS</a>
+        </li>
+        <li>
+          <a href="contact-us.html">CONTACT US</a>
+        </li>
+        <li>
+          <a href="sitemap.html">SITEMAP</a>
+        </li>
+      </ul>
+    </section>
+    <!-- End menu -->
+
+    <button class="explore"></button>
+    <button class="learn"></button>
+    <button class="help"></button>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="vendors/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendors/jquery/jquery.mobile-detect.min.js"></script>
+
+    <!-- Player -->
+    <script type="text/javascript" src="vendors/jplayer/jquery.jplayer.min.js"></script>
+
+
+    <!-- sliderPro -->
+    <script type="text/javascript" src="vendors/slider-pro/js/jquery.sliderPro.min.js"></script>
+
+    <!-- Modal -->
+    <script type="text/javascript" src="vendors/jquery/jquery.modal.min.js"></script>
+
+    <!-- Tooltipster -->
+    <script type="text/javascript" src="vendors/jquery-tooltipster/tooltipster.bundle.min.js"></script>
+
+    <script type="text/javascript" src="js/script.min.js"></script>
+    <script type="text/javascript" src="js/marine.min.js"></script>
+
+    <script type="text/javascript" src="js/explore-charts.js"></script>
+
+    <script type="text/javascript" src="js/hotfix.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-22372114-4"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-22372114-4');
+
+    </script>
+  </body>
+
+</html>

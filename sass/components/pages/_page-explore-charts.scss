@@ -1,0 +1,507 @@
+.body--explore-charts {
+  background: url('../img/explore-charts/background-explore-charts.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  .jquery-modal,
+  .blocker {
+    z-index: 20;
+  }
+
+  .mysteries-depths--slider-information {
+    .explore-charts--header-left {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      position: relative;
+      line-height: 1.2;
+      font-weight: 400;
+
+      &:after {
+        background-color: $white;
+        height: 1px;
+        content: ' ';
+        position: absolute;
+        left: -4vh;
+        right: -4vh;
+        bottom: 0;
+      }
+    }
+
+    .mysteries-depths--slider-title {
+      padding-bottom: 0;
+    }
+
+    .mysteries-depths--slider-title:after {
+      display: none;
+    }
+
+    .field {
+      font-size: 2.3vh;
+
+      & + .field {
+        margin-top: 0.5em;
+      }
+
+      & > label {
+        display: block;
+      }
+    }
+  }
+}
+
+.page--explore-charts {
+  .left-box {
+    background: url('../img/explore-charts/explore-map-one.png') no-repeat right bottom;
+    background-size: cover;
+    cursor: pointer;
+    height: 74vh;
+    width: 104vh;
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    z-index: 3;
+
+    &:before {
+      background: url('../img/explore-charts/explore-map-one-hover.png') no-repeat right bottom;
+      background-size: cover;
+      bottom: 1vh;
+      right: 0;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+    }
+
+    &:hover {
+      z-index: 6;
+
+      &:before {
+        content: '';
+      }
+    }
+
+    &-icon-one {
+      background: url('../img/explore-charts/chart-graphic-sextant.png') no-repeat bottom right;
+      background-size: cover;
+      height: 37.4vh;
+      width: 25.5vh;
+      position: absolute;
+      top: 14vh;
+      left: 0;
+      z-index: 3;
+    }
+
+    &-icon-two {
+      background: url('../img/explore-charts/chart-graphic-parallel-rule.png') no-repeat 0 0;
+      background-size: cover;
+      height: 26.35vh;
+      width: 49.3vh;
+      position: absolute;
+      bottom: 0;
+      left: 22vh;
+      z-index: 10;
+    }
+  }
+
+  .right-box {
+    background: url('../img/explore-charts/explore-map-two.png') no-repeat 0 0;
+    background-size: cover;
+    cursor: pointer;
+    height: 75.5vh;
+    width: 96vh;
+    position: absolute;
+    top: 22vh;
+    right: 0;
+    overflow: hidden;
+    z-index: 2;
+
+    &:before {
+      background: url('../img/explore-charts/explore-map-two-hover.png') no-repeat 0 0;
+      background-size: cover;
+      bottom: 0;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 1.4vh;
+    }
+
+    &:hover {
+      z-index: 6;
+
+      &:before {
+        content: '';
+      }
+    }
+
+    &-icon-one {
+      background: url('../img/explore-charts/chart-graphic-dividers.png') no-repeat right 0;
+      background-size: cover;
+      width: 29.31vh;
+      height: 31.87vh;
+      position: absolute;
+      top: 12vh;
+      right: 0;
+      z-index: 10;
+    }
+  }
+}
+
+.explore-charts--modal-content {
+  @include box-shadow (0 0 0 transparent);
+  background: none;
+  max-width: 106vh;
+  margin-top: 8vh;
+  padding: 0;
+
+  a.close-modal {
+    @include border-radius(2vh);
+    background: rgba(2, 95, 27, 0.9) url('../img/background/btn-close.png') no-repeat center center;
+    background-size: cover;
+    border: 1px solid $success;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8vh;
+    height: 7.5vh;
+    top: auto;
+    z-index: 20;
+  }
+
+  & > img {
+    @include box-shadow (5px 1px 10px 2px rgba(0, 0, 0, 0.5));
+    width: 100%;
+  }
+
+  & > div {
+    background-image: url('../img/explore-charts/chart-boat.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 4vh;
+    height: 3.4vh;
+    cursor: pointer;
+  }
+}
+
+#enlarged-great-lakes-admiral,
+#enlarged-great-lakes-arco,
+#enlarged-kingston-taber {
+  .sp-slides-container {
+    padding-bottom: 7.5vh;
+  }
+
+  .sp-arrows {
+    display: none;
+  }
+}
+
+#enlarged-great-lakes {
+  position: relative;
+}
+
+#enlarged-great-lakes > div {
+  &.one {
+    top: 10.37%;
+    left: 25%;
+  }
+  &.two {
+    top: 13.8%;
+    left: 21.5%;
+  }
+  &.three {
+    top: 17%;
+    left: 11.16%;
+  }
+  &.four {
+    top: 22.29%;
+    left: 8.2%;
+  }
+  &.five {
+    top: 43.5%;
+    left: 35.7%;
+  }
+  &.six {
+    top: 45.22%;
+    left: 29%;
+  }
+  &.sevent {
+    top: 48.8%;
+    left: 31.25%;
+  }
+  &.eight {
+    top: 48.3%;
+    left: 70%;
+  }
+  &.nine {
+    top: 57.3%;
+    left: 55.5%;
+  }
+  &.ten {
+    top: 69.5%;
+    left: 58%;
+  }
+  &.elevent {
+    top: 65.87%;
+    left: 78.86%;
+  }
+  &.twelve {
+    top: 66%;
+    left: 81%;
+  }
+  &.thirdteen {
+    top: 63.33%;
+    left: 90%;
+  }
+  &.fourteen {
+    top: 62%;
+    left: 92.8%;
+  }
+  &.fithteen {
+    top: 83.5%;
+    left: 60.26%;
+  }
+  &.sixteen {
+    top: 86%;
+    left: 63.1%;
+  }
+  &.seventeen {
+    top: 87%;
+    left: 60.2%;
+  }
+  &.eightteen {
+    top: 87.8%;
+    left: 55.8%;
+  }
+}
+
+#enlarged-kingston {
+  position: relative;
+}
+
+#enlarged-kingston > div {
+  &.one {
+    top: 13%;
+    left: 50.5%;
+  }
+  &.two {
+    top: 14.5%;
+    left: 43.33%;
+  }
+  &.three {
+    top: 20%;
+    left: 32.5%;
+  }
+  &.four {
+    top: 24%;
+    left: 19.07%;
+  }
+  &.five {
+    top: 46.12%;
+    left: 15.5%;
+  }
+  &.six {
+    top: 57.5%;
+    left: 8.34%;
+  }
+  &.sevent {
+    top: 62.07%;
+    left: 8.34%;
+  }
+  &.eight {
+    top: 65.5%;
+    left: 3.6%;
+  }
+  &.nine {
+    top: 80.8%;
+    left: 11.12%;
+  }
+}
+
+.explore-charts-map-location-modal {
+  display: none;
+  padding: 0;
+
+  a.close-modal {
+    @include border-radius(2vh);
+    background: rgba(2, 95, 27, 0.9) url('../img/background/btn-close.png') no-repeat center center;
+    background-size: cover;
+    border: 1px solid $success;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8vh;
+    height: 7.5vh;
+    top: auto;
+    z-index: 20;
+  }
+
+  .sp-buttons {
+    padding-bottom: 2vh;
+    padding-top: 3vh;
+    width: 220px;
+    margin: auto;
+  }
+  .sp-button {
+    border: 1px solid $white;
+    width: 8px;
+    height: 8px;
+  }
+
+  .sp-selected-button {
+    background-color: $white;
+  }
+
+  .sp-arrows {
+    @include marine-opacity(100);
+    margin-top: 1.5vh;
+    top: 100%;
+  }
+  .sp-arrow {
+    width: 7vh;
+    height: 6.6vh;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    &.sp-previous-arrow {
+      background: url('../img/icons/btn-previous.png') no-repeat center center;
+      background-size: cover;
+      right: 50%;
+      margin-right: 110px;
+      left: auto;
+    }
+
+    &.sp-next-arrow {
+      background: url('../img/icons/btn-next.png') no-repeat center center;
+      background-size: cover;
+      left: 50%;
+      margin-left: 110px;
+    }
+  }
+}
+
+#enlarged-great-lakes-location-AlvinClark,
+#enlarged-great-lakes-location-frankoconnor,
+#enlarged-great-lakes-griff
+#enlarged-kingston-aloha,
+#enlarged-kingston-effie,
+#enlarged-kingston-prince {
+  .sp-thumbnail-container {
+    max-height: 80vh;
+
+    &:after {
+      border: 1px solid $white;
+      content: '';
+      position: absolute;
+      left: 0.6em;
+      right: 0.6em;
+      bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .body--explore-charts {
+    .mysteries-depths--slider-information {
+      margin-bottom: -0.6em;
+      padding: 0;
+  
+      .explore-charts--header {
+        display: table;
+        width: 100%;
+  
+        & > div {
+          display: table-cell;
+          width: 50%;
+          padding: 0.9em 0.6em;
+        }
+  
+        .explore-charts--header-left {
+          border-right: 1px solid $white;
+  
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .page--explore-charts {
+    .left-box {
+      max-width: 100%;
+      height: 50vh;
+      z-index: 3 !important;
+
+      &:before {
+        display: none;
+      }
+
+      &-icon-one {
+        height: 28vh;
+        width: 16vh;
+        top: 10vh;
+      }
+
+      &-icon-two {
+        height: 18vh;
+        width: 37vh;
+        left: -10vh;
+      }
+    }
+
+    .right-box {
+      max-width: 100%;
+      height: 50vh;
+      top: 40vh;
+      background-position: bottom left;
+      z-index: 2 !important;
+
+      &:before {
+        display: none;
+      }
+
+      &-icon-one {
+        width: 20.5vh;
+        height: 22vh;
+      }
+    }
+  }
+}
+
+@media (min-width: $tab-screen) {
+  .explore-charts-map-location-modal {
+    &:before {
+      border-left: 1px solid $white;
+      content: ' ';
+      position: absolute;
+      left: 30%;
+      bottom: 0;
+      top: 0;
+    }
+
+    .sp-arrow.sp-previous-arrow {
+      right: 35%;
+    }
+
+    .sp-arrow.sp-next-arrow {
+      left: 65%;
+    }
+
+    .sp-buttons {
+      position: relative;
+      left: 65%;
+      margin: 0 0 0 -110px;
+    }
+
+    .sp-button {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

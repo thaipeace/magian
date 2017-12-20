@@ -1,0 +1,35 @@
+.tooltipster-sidetip.tooltipster-top {
+  height: auto !important;
+
+  .tooltipster-box {
+    @include border-radius(0);
+    background: $white;
+    border-color: $green;
+    border-width: 1px 1px 3px;
+    margin-bottom: 0;
+  }
+
+  .tooltipster-content {
+    color: $textColor;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 1;
+    font-size: 0.8em;
+  }
+  
+  .tooltipster-arrow {
+    width: 12px;
+    margin-left: -6px;
+    height: 6px;
+    top: 100%;
+
+    .tooltipster-arrow-border {
+      border: 6px;
+    }
+
+    .tooltipster-arrow-background {
+      border-width: 6px;
+      border-top-color: $green;
+    }
+  }
+}

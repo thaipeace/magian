@@ -1,0 +1,20 @@
+$mobile-screen    :   479px;
+$tab-screen       :   767px;
+$medium-screen    :   950px;
+$desk-screen      :   1023px;
+$large-screen     :   1400px;
+$very-large-screen:   1900px;
+
+$space            :   20px;
+
+$font             :   2.5vh;
+$font-size-xl     :   ceil($font * 2.28);
+$font-size-lg     :   ceil($font * 1.71);
+$font-size-md     :   ceil($font * 1.14);
+$font-size-sm     :   ceil($font * 0.92);
+$font-size-xs     :   ceil($font * 0.85);
+$font-size-xxs    :   ceil($font * 0.7);
+
+$grids            :   4;
+$grids            :   add-grid(12 at $tab-screen);
+$gutters          :   1/3;

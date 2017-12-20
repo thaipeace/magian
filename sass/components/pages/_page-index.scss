@@ -1,0 +1,27 @@
+body {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .jquery-modal, 
+  .blocker {
+    z-index: 20;
+  }
+}
+
+.body--index {
+  background: url("../img/HomeBG.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.content.index {
+  h1 {
+    font-size: 6vh;
+  }
+}
+
+@media (max-width: $tab-screen) and (orientation: portrait) {
+  .content.index {
+    background-size: auto 100%;
+  }
+}

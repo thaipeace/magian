@@ -1,0 +1,371 @@
+.body--exploring-hms-lawrence {
+  background: url('../img/explore-hms/Explore_St_Lawrence_BG.jpg') no-repeat center center;
+  background-size: cover;
+
+  .content {
+    position: relative;
+  }
+
+  .jquery-modal, 
+  .blocker {
+    z-index: 20;
+  }
+}
+
+.page--exploring-hms-lawrence {
+
+  .st-lawrence > a {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+
+    &:after {
+      @include marine-opacity(0);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    &:hover:after {
+      @include marine-opacity(100);
+    }
+  }
+
+  .one {
+    background: url('../img/explore-hms/button_object_camera.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    top: 3vh;
+    left: 10vh;
+    width: 65.45vh;
+    height: 43vh;
+    z-index: 3;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_camera_hover.png');
+    }
+  }
+
+  .two {
+    background: url('../img/explore-hms/button_object_St_Lawrence_Admiralty.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    top: -6vh;
+    left: 42vh;
+    width: 78.18vh;
+    height: 30.63vh;
+    z-index: 2;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_St_Lawrence_Admiralty_hover.png');
+    }
+  }
+
+  .three {
+    background: url('../img/explore-hms/button_object_Map.jpg') no-repeat 0 0;
+    background-size: 100% 100%;
+    top: 26vh;
+    left: 52vh;
+    width: 32.45vh;
+    height: 29vh;
+    z-index: 2;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_Map_hover.jpg');
+    }
+  }
+
+  .four {
+    background: url('../img/explore-hms/button_object_Harbor.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    bottom: 3vh;
+    left: 14vh;
+    width: 54.63vh;
+    height: 37.82vh;
+    z-index: 3;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_Harbor_hover.png');
+    }
+  }
+
+  .five {
+    background: url('../img/explore-hms/button_object_Photogrammetry.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    top: 15vh;
+    right: 44vh;
+    width: 67.18vh;
+    height: 30.54vh;
+    z-index: 1;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_Photogrammetry_hover.png');
+    }
+  }
+
+  .six {
+    background: url('../img/explore-hms/button_object_painting_St_Lawrence.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    top: 40vh;
+    right: 60vh;
+    width: 58.27vh;
+    height: 39.45vh;
+    z-index: 3;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_painting_St_Lawrence_hover.png');
+    }
+  }
+
+  .sevent {
+    background: url('../img/explore-hms/button_object_newspaper.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    top: 8vh;
+    right: 22vh;
+    width: 31.63vh;
+    height: 68.27vh;
+    z-index: 3;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_newspaper_hover.png');
+    }
+  }
+
+  .eight {
+    background: url('../img/explore-hms/button_object_Video.png') no-repeat 0 0;
+    background-size: 100% 100%;
+    bottom: 6vh;
+    right: 35vh;
+    width: 28.09vh;
+    height: 44.09vh;
+    z-index: 4;
+
+    &:after {
+      background-image: url('../img/explore-hms/button_object_Video_hover.png');
+    }
+  }
+}
+
+.page--exploring-hms-lawrence-modal {
+  @include border-radius(0.5em 0.5em 2vh 0.5em);
+  background: rgba(2, 95, 27, 0.65);
+  padding: 0.4em 0.4em 8.5vh;
+
+  video {
+    width: 100vh;
+    max-width: 100%;
+  }
+
+  a.close-modal {
+    @include border-radius(2vh);
+    background: rgba(2, 95, 27, 0.9) url('../img/background/btn-close.png') no-repeat center center;
+    background-size: cover;
+    border: 1px solid $success;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8vh;
+    height: 7.5vh;
+    top: auto;
+    z-index: 20;
+  }
+}
+
+.exploring-hms--slider-content {
+  display: none;
+  padding: 0;
+
+  a.close-modal {
+    @include border-radius(2vh);
+    background: rgba(2, 95, 27, 0.9) url('../img/background/btn-close.png') no-repeat center center;
+    background-size: cover;
+    border: 1px solid $success;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8vh;
+    height: 7.5vh;
+    top: auto;
+    z-index: 20;
+  }
+
+  .sp-buttons {
+    padding-bottom: 2vh;
+    padding-top: 3vh;
+    width: 120px;
+    margin: auto;
+  }
+  .sp-button {
+    border: 1px solid $white;
+    width: 8px;
+    height: 8px;
+  }
+
+  .sp-selected-button {
+    background-color: $white;
+  }
+
+  .sp-arrows {
+    @include marine-opacity(100);
+    margin-top: 0;
+    top: 100%;
+  }
+  .sp-arrow {
+    width: 7vh;
+    height: 6.6vh;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    &.sp-previous-arrow {
+      background: url('../img/icons/btn-previous.png') no-repeat center center;
+      background-size: cover;
+      right: 50%;
+      margin-right: 60px;
+      left: auto;
+    }
+
+    &.sp-next-arrow {
+      background: url('../img/icons/btn-next.png') no-repeat center center;
+      background-size: cover;
+      left: 50%;
+      margin-left: 60px;
+    }
+  }
+}
+
+#page--exploring-hms-four,
+#page--exploring-hms-six,
+#page--exploring-hms-sevent {
+  .sp-slides-container {
+    padding-bottom: 7.5vh;
+  }
+
+  .sp-arrows {
+    display: none;
+  }
+}
+
+#page--exploring-hms-sevent .sp-thumbnail-container {
+  max-height: 80vh;
+
+  &:after {
+    border: 1px solid $white;
+    content: '';
+    position: absolute;
+    left: 0.6em;
+    right: 0.6em;
+    bottom: 0;
+  }
+}
+
+
+@media (max-width: $mobile-screen ) {
+  .page--exploring-hms-lawrence {
+    .one {
+      width: 38vh;
+      height: 23vh;
+      top: 18vh;
+      left: 3vh;
+    }
+
+    .two {
+      left: -30vh;
+      top: -10vh;
+    }
+
+    .three {
+      top: 42vh;
+      left: 10vh;
+      width: 21.8vh;
+      height: 19vh;
+      z-index: 2;
+    }
+
+    .four {
+      bottom: 1vh;
+      left: 4vh;
+      width: 34vh;
+      height: 22vh;
+    }
+
+    .five {
+      top: 4vh;
+      right: 0;
+      width: 48vh;
+      height: 22vh;
+    }
+
+    .six {
+      top: 30vh;
+      right: 10vh;
+      width: 35vh;
+      height: 24vh;
+    }
+
+    .sevent {
+      top: 22vh;
+      right: -2vh;
+      width: 24vh;
+      height: 48vh;
+    }
+
+    .eight {
+      bottom: 0;
+      right: 8vh;
+      width: 21vh;
+      height: 33vh;
+    }
+  }
+}
+
+@media (min-width: $mobile-screen ) {
+  .page--exploring-hms-lawrence-modal {
+    max-width: 124vh;
+
+    video {
+      height: 61vh;
+      width: 124vh;
+      max-width: 100%;
+    }
+  }
+}
+
+
+@media (min-width: $desk-screen) {
+  .exploring-hms--slider-content {
+    &:before {
+      border-left: 1px solid $white;
+      content: ' ';
+      position: absolute;
+      left: 30%;
+      bottom: 0;
+      top: 0;
+    }
+
+    .sp-arrow.sp-previous-arrow {
+      right: 35%;
+    }
+
+    .sp-arrow.sp-next-arrow {
+      left: 65%;
+    }
+
+    .sp-buttons {
+      position: relative;
+      left: 65%;
+      margin: 0 0 0 -60px;
+    }
+
+    .sp-button {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

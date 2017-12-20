@@ -1,0 +1,90 @@
+.no-padding {
+  padding: 0 !important;
+}
+.no-padding-h {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.no-padding-v {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.p-xs {
+  padding: 0.2 * $space;
+}
+.p-sm {
+  padding: 0.4 * $space;
+}
+.p {
+  padding: 0.8 * $space;
+}
+.p-md {
+  padding: $space;
+}
+.p-lg {
+  padding: 1.6 * $space;
+}
+.p-h {
+  padding-left: 0.8 * $space;
+  padding-right: 0.8 * $space;
+}
+.p-h-xs {
+  padding-left: 0.2 * $space;
+  padding-right: 0.2 * $space;
+}
+.p-h-sm {
+  padding-left: 0.4 * $space;
+  padding-right: 0.4 * $space;
+}
+.p-h-md {
+  padding-left: $space;
+  padding-right: $space;
+}
+.p-h-lg {
+  padding-left: 1.6 * $space;
+  padding-right: 1.6 * $space;
+}
+.p-v {
+  padding-top: 0.8 * $space;
+  padding-bottom: 0.8 * $space;
+}
+.p-v-xs {
+  padding-top: 0.2 * $space;
+  padding-bottom: 0.2 * $space;
+}
+.p-v-sm {
+  padding-top: 0.4 * $space;
+  padding-bottom: 0.4 * $space;
+}
+.p-v-md {
+  padding-top: $space;
+  padding-bottom: $space;
+}
+.p-v-lg {
+  padding-top: 1.6 * $space;
+  padding-bottom: 1.6 * $space;
+}
+.padding {
+  padding: 1.6 * $space 1.6 * $space;
+}
+.padding-out {
+  margin: -1.6 * $space -1.6 * $space;
+}
+
+@media (max-width: $medium-screen)  {
+  .padding {
+    padding: 0.8 * $space 0.8 * $space;
+  }
+  .padding-out {
+    margin: -0.8 * $space -0.8 * $space;
+  }
+}
+
+@media (max-width: $tab-screen)  {
+  .padding {
+    padding: 0.4 * $space 0.4 * $space;
+  }
+  .padding-out {
+    margin: -0.4 * $space -0.4 * $space;
+  }
+}

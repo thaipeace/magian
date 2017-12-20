@@ -1,0 +1,50 @@
+.item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li + li {
+    margin-top: $space;
+  }
+}
+
+@media (min-width: $tab-screen) {
+  .item-list {
+    overflow: hidden;
+    margin-left: -1.5 * $space;
+
+    li {
+      float: left;
+      padding-left: 1.5 * $space;
+      width: 33.33%;
+    }
+
+    li + li {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: $desk-screen) {
+  .item-list {
+    a {
+      display: inline-block;
+      position: relative;
+
+      &:hover:after {
+        border-color: $white;
+      }
+
+      &:after {
+        @include marine-transition(0.3s);
+        border: 2px solid transparent;
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+      }
+    }
+  }
+}

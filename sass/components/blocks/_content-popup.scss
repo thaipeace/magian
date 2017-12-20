@@ -1,0 +1,20 @@
+.content-popup {
+  @include border-radius(2vh);
+  background: rgba(11, 57, 26, 0.9);
+  color: #fff;
+  font-size: 2vh;
+  padding: 1.2em;
+  position: relative;
+
+  .btn-close {
+    @include border-radius(2vh);
+    background: rgba(2, 95, 27, 0.9) url('../img/background/btn-close.png') no-repeat center center;
+    background-size: cover;
+    border: 1px solid #6bbc45;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8vh;
+    height: 7.5vh;
+  }
+}

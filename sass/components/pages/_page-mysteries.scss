@@ -1,0 +1,258 @@
+.mysteries-depths--slider-content {
+  display: none;
+  padding: 0;
+
+  a.close-modal {
+    @include border-radius(2vh);
+    background: rgba(2, 95, 27, 0.9) url('../img/background/btn-close.png') no-repeat center center;
+    background-size: cover;
+    border: 1px solid $success;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8vh;
+    height: 7.5vh;
+    top: auto;
+    z-index: 20;
+  }
+
+  .sp-buttons {
+    padding-bottom: 2vh;
+    padding-top: 3vh;
+    width: 120px;
+    margin: auto;
+  }
+  .sp-button {
+    border: 1px solid $white;
+    width: 8px;
+    height: 8px;
+  }
+
+  .sp-selected-button {
+    background-color: $white;
+  }
+
+  .sp-arrows {
+    @include marine-opacity(100);
+    margin-top: 0;
+    top: 100%;
+  }
+  .sp-arrow {
+    width: 7vh;
+    height: 6.6vh;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    &.sp-previous-arrow {
+      background: url('../img/icons/btn-previous.png') no-repeat center center;
+      background-size: cover;
+      right: 50%;
+      margin-right: 60px;
+      left: auto;
+    }
+
+    &.sp-next-arrow {
+      background: url('../img/icons/btn-next.png') no-repeat center center;
+      background-size: cover;
+      left: 50%;
+      margin-left: 60px;
+    }
+  }
+}
+
+.mysteries-depths--slider-information {
+  padding: 4vh 4vh 0;
+
+  .mysteries-depths--slider-title {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    line-height: 1.2;
+    font-weight: 400;
+
+    &:after {
+      background-color: $white;
+      height: 1px;
+      content: ' ';
+      position: absolute;
+      left: -4vh;
+      right: -4vh;
+      bottom: 0;
+    }
+  }
+}
+
+.sp-thumbnail-container {
+  padding: 0.6em;
+}
+
+
+.body--mysteries {
+  background: url('../img/mysteries-depths/Mysteries_BG.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  .container {
+    max-width: none;
+  }
+}
+
+.block--mysteries-depths-anchors ul {
+  list-style: none;
+}
+
+.mysteries-depths--link {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: block;
+  color: transparent;
+  max-width: 100%;
+  position: absolute;
+  left: 50%;
+
+  &:after {
+    @include marine-opacity(0);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &:hover{
+    z-index: 11 !important;
+
+    &:after {
+      @include marine-opacity(100);
+    }
+  }
+
+  &.first {
+    background-image: url('../img/mysteries-depths/button_mysteries_edmund_fitzgerald.png');
+    height: 18.09vh;
+    width: 118vh;
+    bottom: 60.5vh;
+    margin-left: -59vh;
+    z-index: 9;
+
+    &:after {
+      background-image: url('../img/mysteries-depths/button_mysteries_edmund_fitzgerald_hover.png');
+    }
+  }
+
+  &.second {
+    background-image: url('../img/mysteries-depths/button_mysteries_le_Griffon.png');
+    height: 11.27vh;
+    width: 120vh;
+    bottom: 50vh;
+    margin-left: -60vh;
+    z-index: 8;
+
+    &:after {
+      background-image: url('../img/mysteries-depths/button_mysteries_le_Griffon_hover.png');
+    }
+  }
+
+  &.third {
+    background-image: url('../img/mysteries-depths/button_mysteries_bannockburn.png');
+    height: 19.81vh;
+    width: 138vh;
+    bottom: 32vh;
+    margin-left: -69vh;
+    z-index: 5;
+
+    &:after {
+      background-image: url('../img/mysteries-depths/button_mysteries_bannockburn_hover.png');
+    }
+  }
+
+  &.four {
+    background-image: url('../img/mysteries-depths/button_mysteries_book_bottom.png');
+    height: 32.18vh;
+    width: 160vh;
+    bottom: 0;
+    margin-left: -90.5vh;
+  }
+}
+
+@media (max-width: $tab-screen) {
+  .body--mysteries {
+    overflow: hidden;
+  }
+
+  .mysteries-depths--link {
+    max-width: none;
+  }
+}
+
+@media (min-width: $tab-screen) and (orientation: portrait) {
+  .mysteries-depths--slider-content {
+    &:before {
+      border-left: 1px solid $white;
+      content: ' ';
+      position: absolute;
+      left: 30%;
+      bottom: 0;
+      top: 0;
+    }
+
+    .sp-arrow.sp-previous-arrow {
+      right: 35%;
+    }
+
+    .sp-arrow.sp-next-arrow {
+      left: 65%;
+    }
+
+    .sp-buttons {
+      position: relative;
+      left: 65%;
+      margin: 0 0 0 -60px;
+    }
+
+    .sp-button {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+
+@media (min-width: $desk-screen) {
+  .mysteries-depths--slider-content {
+    &:before {
+      border-left: 1px solid $white;
+      content: ' ';
+      position: absolute;
+      left: 30%;
+      bottom: 0;
+      top: 0;
+    }
+
+    .sp-arrow.sp-previous-arrow {
+      right: 35%;
+    }
+
+    .sp-arrow.sp-next-arrow {
+      left: 65%;
+    }
+
+    .sp-buttons {
+      position: relative;
+      left: 65%;
+      margin: 0 0 0 -60px;
+    }
+
+    .sp-button {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
