@@ -15,6 +15,7 @@ var itemsPartDefaultPosition = {
 	}
 };
 
+
 MainService.initAudio();
 
 $(document).ready(function() {
@@ -90,7 +91,10 @@ function playPartHeadToSurface() {
 	video.play();
 
 	video.addEventListener("ended", function() {
+		oxyVolume = oxyTotalVolume;
+		updateOxyBarUI(oxyVolume);
        	activatePart('.part1');
+       	$('.bag > div').css('opacity', '0.2');
        	$('.page--wreck-diver .adventure .control .continue').css('opacity', 1);
        	$('.body--wreck-driver .sidebar--popup.learn-popup').show();
        	$('.body--wreck-driver .sidebar--popup.learn-popup .close-menu').text('Dive again!');
@@ -194,17 +198,21 @@ function deactiveControlAndCollection() {
 function startOxyVolumeDes() {
     window.oxyVolumeDes = setInterval(function() {
 		oxyVolume--;
-		var currentHeight = 
-				(oxyVolume * $('.page--wreck-diver .adventure .control .monitor .oxygen .oxy-bar').height()) / oxyTotalVolume;
-
-		$('.page--wreck-diver .adventure .control .monitor .oxygen .oxy-bar .progress-bar').css(
-			'height', currentHeight + 'px'
-		);
+		updateOxyBarUI(oxyVolume);
 
 		if (oxyVolume <= 10) {
 			oxyVolume = 10;
 		}
 	}, 1000);
+}
+
+function updateOxyBarUI(oxyVolume) {
+	var currentHeight = 
+		(oxyVolume * $('.page--wreck-diver .adventure .control .monitor .oxygen .oxy-bar').height()) / oxyTotalVolume;
+
+	$('.page--wreck-diver .adventure .control .monitor .oxygen .oxy-bar .progress-bar').css(
+		'height', currentHeight + 'px'
+	);
 }
 
 function navigationKeyBoardSupport() {
@@ -389,6 +397,7 @@ function activatePart(partSelector) {
 	$(partSelector).addClass('active');
 	renderDefaultItemsPositionInActivePart(partSelector);
 	resetVideoPostionToTopLeft(partSelector);
+	clearItemsStyle(partSelector);
 }
 
 function renderDefaultItemsPositionInActivePart(partSelector) {
@@ -398,13 +407,16 @@ function renderDefaultItemsPositionInActivePart(partSelector) {
 }
 
 function resetVideoPostionToTopLeft(partSelector) {
-	$('.part-video', partSelector).attr('style', '');
+	$('.part-video', partSelector).removeAttr('style');
+}
+
+function clearItemsStyle(partSelector) {
+	$('.part-item .description, .part-item .arrow, .part-item .twinkles, .part-item .twinkles img', partSelector).removeAttr('style');
 }
 
 function setVideoCurrentTime(videoId, certainSecond) {
 	var video = document.getElementById(videoId);
 	video.currentTime = certainSecond;
-	video.pause();
 }
 
 function activeItemsInAnActivatedPart() {
