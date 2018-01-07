@@ -23,10 +23,19 @@
 	position: relative;
 }
 
+.page--wreck-diver {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;	
+}
+
 .page--wreck-diver .adventure .part {
 	width: 100%;
-    height: 87vh;
-    position: absolute;
+    height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
     background: rgba(11,57,26, 1);
@@ -41,7 +50,11 @@
     animation-direction: linear;
 }
 
-.page--wreck-diver .adventure .part1 {
+.page--wreck-diver .adventure .part {
+	display: none;
+}
+
+.page--wreck-diver .adventure .part.active {
     display: block;
 }
 
@@ -85,13 +98,15 @@
 
 .page--wreck-diver .adventure .part .part-item {
 	position: absolute;
-    width: 20vw;
     height: auto;
     display: none;
 }
 
-.page--wreck-diver .adventure .part .part-item.show {
-	display: block;
+.page--wreck-diver .adventure .part .part-item.active {
+	animation-name: fade-in;
+	animation-duration: 1s;
+    animation-direction: linear;
+    display: block;
 }
 
 .page--wreck-diver .adventure .part .part-item .twinkles {
@@ -101,7 +116,7 @@
     margin: 0 auto;
 }
 
-.page--wreck-diver .adventure .part .part-item.show .twinkles {
+.page--wreck-diver .adventure .part .part-item.active .twinkles {
 	animation-name: twinkles;
 	animation-duration: 0.3s;
     animation-iteration-count: infinite;
@@ -128,20 +143,34 @@
 	font-size: 1.5vh;
 	position: relative;
 	margin-bottom: 10px;
+	width: 30vh;
 }
 
-.page--wreck-diver .adventure .part .part-item .description::after {
-	content: '';
+.page--wreck-diver .adventure .part .part-item .description.onleft {
+	transform: translate(calc(-50% - 7vh), calc(50% + 6.5vh));
+}
+
+.page--wreck-diver .adventure .part .part-item .description .arrow {
 	position: absolute;
-	bottom: -2vh;
+	bottom: -4vh;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 0;
 	height: 0;
-	border: 1vh solid rgba(11,57,26, 1);
+	border: 2vh solid rgba(11,57,26, 1);
 	border-left-color: transparent;
 	border-right-color: transparent;
 	border-bottom-color: transparent;
+}
+
+.page--wreck-diver .adventure .part .part-item .description.onleft .arrow {
+    left: calc(100% + 2.3vh);
+    bottom: calc(50%);
+    transform: translate(-50%, 50%);
+    border-left-color: inherit;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
 }
 
 .page--wreck-diver .adventure .part .part-item .description .title {
@@ -165,7 +194,7 @@
 	height: auto;
 	width: auto;
 	max-height: 10vh;
-	max-width: 10vw;
+	max-width: 10vh;
 }
 
 .page--wreck-diver .adventure .part .part-item .description .explain > div:first-child {
@@ -188,6 +217,10 @@
     font-size: 1.5vh;
     color: #fff;
     border-top: 1px solid #fff;
+}
+
+.page--wreck-diver .adventure .control.active {
+	display: block;
 }
 
 .page--wreck-diver .adventure .control > div {
@@ -309,7 +342,7 @@
 	height: 100%;
 	background: url(../img/wreck-diver/position.png) no-repeat center 10vh;
 	background-size: contain;
-	transform: translateX(58vw);
+	transform: translateX(55vw);
 	padding-top: 2vh;
 }
 
@@ -320,27 +353,78 @@
 }
 
 .page--wreck-diver .adventure .control .head-to-surface {
-	width: 8vw;
-	height: 100%;
-	background: url(../img/wreck-diver/Surface-button.png) no-repeat center bottom;
-	background-size: contain;
-	transform: translateX(77vw);
-	cursor: pointer;
+    right: 2vw;
+    bottom: 0;
 }
 
-.page--wreck-diver .adventure .control .head-to-surface a {
+.page--wreck-diver .adventure .control .head-to-surface img {
 	display: block;
+	width: 17vh;
+    height: 10vh;
+    cursor: pointer;
+}
+
+.page--wreck-diver .adventure .control .head-to-surface .confirm {
+	padding: 10px;
+	text-align: center;
+	background: #fff;
+	border-radius: 10px;
+	border: 2px solid rgba(2,89,26, 1);
+	display: none;
+	position: absolute;
+	bottom: 13vh;
+	right: -1vw;
+	color: #000;
+}
+
+.page--wreck-diver .adventure .control .head-to-surface .confirm::after {
+	content: '';
+	position: absolute;
+	bottom: -6vh;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border: 3vh solid #fff;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+}
+
+.page--wreck-diver .adventure .control .head-to-surface .confirm .text {
+    width: 20vh;
+    margin-bottom: 20px;
+    font-size: 2vh;
+}
+
+.page--wreck-diver .adventure .control .head-to-surface .confirm .button > span {
+	background: rgba(2,89,26, 1);
+	border: 1px solid rgb(107, 188, 69);
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
 }
 
 .page--wreck-diver .adventure .control .continue {
     transform: translate(-50%, -102%);
-    cursor: pointer;
     z-index: -1;
     text-transform: uppercase;
     text-align: center;
     width: 20vh;
     left: 50%;
     height: 10vh;
+}
+
+.page--wreck-diver .adventure .control .continue .clickable {
+    cursor: pointer;
+    position: absolute;
+    width: 76%;
+    height: 65%;
+    top: -10%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, 50%);
 }
 
 .page--wreck-diver .adventure .control .continue a {
@@ -353,10 +437,10 @@
 }
 
 .page--wreck-diver .adventure .control .continue a img {
-	width: 40vh;
+	width: 28vh;
     position: absolute;
-    top: -10vh;
-    left: -9vh;
+    top: -3.9vh;
+    left: -3.8vh;
     z-index: -1;
     max-width: unset;
 }
@@ -373,6 +457,10 @@
     display: none;
 }
 
+.page--wreck-diver .collection.active {
+	display: block;
+}
+
 .page--wreck-diver .collection .title {
 	font-size: 2vh;
 	color: #fff;
@@ -383,6 +471,7 @@
 
 .page--wreck-diver .collection .bag {
 	position: relative;
+	height: 100%;
 }
 
 .page--wreck-diver .collection .bag > div {
@@ -401,5 +490,10 @@
 
 @keyframes twinkles {
     from {opacity: 0.3;}
+    to {opacity: 1;}
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
     to {opacity: 1;}
 }

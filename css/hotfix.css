@@ -58,6 +58,8 @@ header .header .right-logo a img {
     height: 6vh;
     line-height: 6vh;
     top:0;
+    z-index: 2;
+    position: relative;
 }
 
 #music-player-container .jp-play,
