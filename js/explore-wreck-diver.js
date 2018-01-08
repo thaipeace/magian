@@ -55,6 +55,17 @@ $(document).ready(function() {
 		$('.head-to-surface .confirm').hide();
 	});
 
+	$('.oxygen .confirm .button').click(function(event){
+		var action = $(event.target).text();
+		if (action === 'OK') {
+			deactiveControlAndCollection();
+			activatePart('.part-head-to-surface');
+			activeItemsInAnActivatedPart();
+			playPartHeadToSurface();
+		}
+		$('.oxygen .confirm').hide();
+	});
+
 	$(document).click(function(event){
 		disableAllDescription();
 	});
@@ -119,7 +130,11 @@ function handleEndOfFirstVideo(video) {
 	        $('.page--wreck-diver .adventure .part .video .skip-video').hide();
 
 	        activeItemsInAnActivatedPart();
+
+	        oxyVolume = oxyTotalVolume;
+			updateOxyBarUI(oxyVolume);
 	        startOxyVolumeDes();
+
 	        setupCollectingEvent();
 	        activeControlAndCollection();
 	    	
@@ -140,7 +155,11 @@ function playPart2() {
 	$('.page--wreck-diver .adventure .control .continue').css('opacity', 0.5);
 	$('.page--wreck-diver .adventure .part2 .part-item').removeClass('active');
 	MainService.startAudio();
+
+	oxyVolume = oxyTotalVolume;
+	updateOxyBarUI(oxyVolume);
 	startOxyVolumeDes();
+	
 	video.currentTime = 0;
 	video.play();
 
@@ -200,8 +219,8 @@ function startOxyVolumeDes() {
 		oxyVolume--;
 		updateOxyBarUI(oxyVolume);
 
-		if (oxyVolume <= 10) {
-			oxyVolume = 10;
+		if (oxyVolume <= 0) {
+			$('.oxygen .confirm').show();
 		}
 	}, 1000);
 }

@@ -364,7 +364,8 @@
     cursor: pointer;
 }
 
-.page--wreck-diver .adventure .control .head-to-surface .confirm {
+.page--wreck-diver .adventure .control .head-to-surface .confirm,
+.oxy-bar .confirm {
 	padding: 10px;
 	text-align: center;
 	background: #fff;
@@ -377,7 +378,13 @@
 	color: #000;
 }
 
-.page--wreck-diver .adventure .control .head-to-surface .confirm::after {
+.oxy-bar .confirm {
+	bottom: 14vh;
+	right: -11vh;
+}
+
+.page--wreck-diver .adventure .control .head-to-surface .confirm::after,
+.oxy-bar .confirm::after {
 	content: '';
 	position: absolute;
 	bottom: -6vh;
@@ -391,13 +398,15 @@
 	border-bottom-color: transparent;
 }
 
-.page--wreck-diver .adventure .control .head-to-surface .confirm .text {
+.page--wreck-diver .adventure .control .head-to-surface .confirm .text,
+.oxy-bar .confirm .text {
     width: 20vh;
     margin-bottom: 20px;
     font-size: 2vh;
 }
 
-.page--wreck-diver .adventure .control .head-to-surface .confirm .button > span {
+.page--wreck-diver .adventure .control .head-to-surface .confirm .button > span,
+.oxy-bar .confirm .button > span {
 	background: rgba(2,89,26, 1);
 	border: 1px solid rgb(107, 188, 69);
 	padding: 5px 10px;
