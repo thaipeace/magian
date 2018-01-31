@@ -40,6 +40,11 @@
           fadeDuration: 250,
           fadeDelay: 1.5,
         });
+
+        $(target).on($.modal.OPEN, function(event, modal) {
+          $('.close-modal').attr('tabindex', 1);
+          $('#page--exploring-video-player video').get(0).play();
+        });
       });
     }
   };
@@ -55,8 +60,10 @@
           fadeDuration: 250,
           fadeDelay: 1.5,
         });
+
         $(target).on($.modal.OPEN, function(event, modal) {
           _this.registerSlider(target);
+          $('.close-modal').attr('tabindex', 1);
         });
       });
     }

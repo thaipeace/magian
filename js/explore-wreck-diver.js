@@ -1,6 +1,7 @@
 var oxyTotalVolume = 180,
 	oxyVolume = oxyTotalVolume;
 var isVideoStoped = false;
+var isAllTwinklesInLastActiveStillOpened = false;
 
 var itemsPartDefaultPosition = {
 	'.part1': {
@@ -93,19 +94,33 @@ $(document).ready(function() {
 
 	activatePart('.part1');
 
-	$('.body--wreck-driver .close-menu').click(function(event){
-		$('.page--wreck-diver .adventure .part.active .video .skip-video').show();
+	$('.body--wreck-driver .btn-dive-now').click(function(event){
 		//MainService.startAudio();
-		playPartBegin('part1-video');
+		var activeDive = getActiveDive();
+
+		if (activeDive === '2') {
+			playPartBegin('part8-video');
+		} else {
+			playPartBegin('part1-video');
+		}
 	});
 
 	$('.dive-again-button').click(function(){
 		$(this).hide();
-
-		$('.still-image').hide();
+		$('.journal').removeClass('active');
 		deactiveControlAndCollection();
-		$('.page--wreck-diver .adventure .part.active .video .skip-video').show();
-		playPartBegin('part8-video');
+		MainService.resetStyleByJournal();
+
+		
+		var activeDive = getActiveDive();
+
+		if (activeDive === '2') {
+			activatePart('.part8');
+			playPartBegin('part8-video');
+		} else {
+			activatePart('.part1');
+			playPartBegin('part1-video');
+		}
 	});
 
 	$('.page--wreck-diver .adventure').on('click', '.part.active .video .skip-video', function(event) {
@@ -128,14 +143,14 @@ $(document).ready(function() {
 
 	$('.head-to-surface img').click(function(event){
 		$('.head-to-surface .confirm').show();
-		$('.collection .dive-complete-massage').hide();
+		$('.dive-complete-massage, .dive-incomplete-massage', '.collection').hide();
 	});
 
 	$('.head-to-surface .confirm .button').click(function(event){
 		var action = $(event.target).text();
 
 		if (action === 'YES') {
-			if (!isAllItemInActiveDiveFound()) {
+			if (!isAllItemInActiveDiveFound() && !isLastStillOfEachDiveActive()) {
 				resetCollectionItemFoundInActivePart();
 			}
 
@@ -177,6 +192,10 @@ $(document).ready(function() {
 		var nextPartName = $('.part.active').next().attr('name');
 		activatePart(nextPartSelector);
 		playPart(nextPartName);
+	});
+
+	$('.body--wreck-driver .btn-view-journal').click(function(event){
+		MainService.activeJournal();
 	});
 });
 
@@ -240,26 +259,26 @@ function playPartHeadToSurface() {
 		updateOxyBarUI(oxyVolume);
 		var activeDive = getActiveDive();
 
-		if (isAllItemInActiveDiveFound()) {
-			if (activeDive === "1") {
-				$('.page--wreck-diver .collection').addClass('active');
-				activatePart('.part8');
-				$('.part-head-to-surface').attr('data-dive', 2);
-			} else {
-
-			}
+		if (isAllItemInActiveDiveFound() || isAllTwinklesInLastActiveStillOpened) {
+			$('.page--wreck-diver .collection').addClass('active');
+			activatePart('.part-journal');
+			$('.learn-popup').show();
+			$('.learn-popup .learn-content.to-journal').addClass('active');
+			$('.learn-popup .learn-content.to-restart').removeClass('active');
+			$('.learn-popup .to-journal .close-menu').text('');
+			setActiveDive(parseInt(activeDive) + 1);
 		}else {
 			if (activeDive === "1") {
 		       	activatePart('.part1');
-		       	$('.body--wreck-driver .sidebar--popup.learn-popup').show();
-		       	$('.body--wreck-driver .sidebar--popup.learn-popup .close-menu').text('Dive again!');
 	       	} else {
 	       		activatePart('.part8');
 	       		$('.page--wreck-diver .collection').addClass('active');
-	       		$('.still-image').show();
-	       		$('.dive-again-button').show();
-	       	}
-
+	       	}	
+			
+			$('.learn-popup').show();
+			$('.learn-popup .learn-content.to-restart').addClass('active');
+			$('.learn-popup .learn-content.to-journal').removeClass('active');
+	       	$('.learn-popup .to-restart .close-menu').text('Dive again!');
 	       	$('.bag > div[data-dive="' + activeDive + '"]').css('opacity', '0.2');
 		}
 
@@ -269,6 +288,9 @@ function playPartHeadToSurface() {
 }
 
 function playPartBegin(videoId) {
+	$('.page--wreck-diver .adventure .part.active .video .skip-video').show();
+	isAllTwinklesInLastActiveStillOpened = false;
+
 	var video = document.getElementById(videoId);
 	isVideoStoped = false;
 	window.clearInterval(window.oxyVolumeDes);
@@ -299,33 +321,6 @@ function handleEndOfFirstVideo(video) {
     }, false);
 }
 
-function playPart2() {
-	var video = document.getElementById('part2-video');
-	isVideoStoped = false;
-	window.clearInterval(window.oxyVolumeDes);
-	$('.page--wreck-diver .adventure .part.active .continue').css('opacity', 0.5);
-	$('.page--wreck-diver .adventure .part2 .part-item').removeClass('active');
-
-	startOxyVolumeDes();
-	
-	video.currentTime = 0;
-	video.play();
-
-    //handler should be bound first
-    video.addEventListener("timeupdate", function() {
-       	if (this.currentTime >= 12.5 && !isVideoStoped) {
-       		isVideoStoped = true;
-            this.pause();
-
-            activeItemsInAnActivatedPart();
-            $('.page--wreck-diver .adventure .part.active .continue').css('opacity', 1);
-
-            setupCollectingEvent();
-            activeControlAndCollection();
-        }
-    }, false);
-}
-
 function setupCollectingEvent() {
 	$('.page--wreck-diver .adventure .part .part-item.active .twinkles').on('click', function(event) {
 		$(this).css({
@@ -348,10 +343,18 @@ function setupCollectingEvent() {
 		var itemInCollectionClass = $('.twinkles', parentContext).data('target');
 		$('.' + itemInCollectionClass, '.collection').attr('discover', true).css('opacity', 1);
 
-		if (isAllItemInActiveDiveFound() && $(parentContext).closest('.part').attr('data-dive') === '1') {
-			$('.collection .dive-complete-massage').show();
+		if (isLastStillOfEachDiveActive()) {
+			checkAllTwinklesInLastStillOpened();
 		}
 
+		if (isAllTwinklesInLastActiveStillOpened) {
+			if (isAllItemInActiveDiveFound()) {
+				$('.collection .dive-complete-massage').show();
+			} else {
+				$('.collection .dive-incomplete-massage').show();
+			}
+		}
+		
 		window.clearInterval(window.oxyVolumeDes);
 	});
 }
@@ -540,7 +543,7 @@ function isAllItemInActiveDiveFound() {
 
 	return $('.bag > div[data-dive="' + diveNumber + '"]').toArray().every(function(item){
 		return $(item).attr('discover') === 'true';
-	})
+	});
 }
 
 function handlePopUpVerticalPosition(topItemPosition, itemElement) {
@@ -657,5 +660,27 @@ function handlePopUpHorizonPosition(leftItemPosition, itemElement) {
 }
 
 function getActiveDive() {
-	return $('.part-head-to-surface').attr('data-dive');
+	return $('.part-journal').attr('data-dive');
+}
+
+function setActiveDive(activeDiveNumber) {
+	$('.part-head-to-surface, .part-journal').attr('data-dive', activeDiveNumber);
+}
+
+function isLastStillOfEachDiveActive() {
+	return  ['part7', 'part14'].indexOf($('.adventure').find('.part.active').attr('name')) !== -1;
+}
+
+function checkAllTwinklesInLastStillOpened() {
+	var dive = getActiveDive();
+
+	if (dive === '1') {
+		isAllTwinklesInLastActiveStillOpened = $('.bag div[data-dive=' + dive + '][part=7]').toArray().every(function(collectionItem) {
+			return $(collectionItem).attr('discover') === 'true';
+		});
+	} else {
+		isAllTwinklesInLastActiveStillOpened = $('.bag div[data-dive=' + dive + '][part=14]').toArray().every(function(collectionItem) {
+			return $(collectionItem).attr('discover') === 'true';
+		});
+	}
 }

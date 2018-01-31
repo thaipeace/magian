@@ -6,6 +6,11 @@
   Index.prototype.init = function() {
     MainService.initAudio();
     MainService.startAudio();
+    this.openLearnPopup();
+  };
+
+  Index.prototype.openLearnPopup = function() {
+    $('.learn').trigger('click');
   };
 
   $(document).ready(function() {

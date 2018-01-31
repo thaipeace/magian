@@ -1,0 +1,22 @@
+[
+	{
+		itemCodes: ["item22", "item101"],
+		itemName: "Donkey Engine Boiler",
+		itemDetail: "This is the boiler, which was used for heating water to create steam that powered small engines like the donkey engine.",
+		shipDetail: "<p>The George Marsh was a ship of sail during the era of steam ships.</p><p>Steam engine technology was used on deck to help make work easier and crews smaller.</p>",
+		conditionsDetail: "The boiler has been moved on this wreck – it would have normally been placed in the middle of the ship",
+		pointPosition: "top: 2%; left: 10%",
+		itemImage: "img/wreck-diver/items/A02_Boiler_MarkedUp_Image.jpg",
+		itemimageAttachment: "img/wreck-diver/items/STEP05_Boiler_image_rollover.png"
+	},
+	{
+		itemCodes: [],
+		itemName: "",
+		itemDetail: "",
+		shipDetail: "",
+		conditionsDetail: "",
+		pointPosition: "",
+		itemImage: '',
+		itemimageAttachment: ''
+	}
+]

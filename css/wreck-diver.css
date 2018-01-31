@@ -1,8 +1,21 @@
+@font-face {
+	font-family: "Kalam-Regular";
+	src: url("font/kalam-regular/Kalam-Regular.eot");
+	src: url("font/kalam-regular/Kalam-Regular.eot?#iefix") format("embedded-opentype"),
+	url("font/kalam-regular/Kalam-Regular.woff") format("woff"),
+	url("font/kalam-regular/Kalam-Regular.ttf") format("truetype"),
+	url("font/kalam-regular/Kalam-Regular.svg#Kalam-Regular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .body--wreck-driver {
 	background: none;
 }
 
-.body--wreck-driver .sidebar--popup .btn-close {
+.body--wreck-driver .sidebar--popup .btn-dive-now {
     background: rgba(2,95,27,0.9) url(../img/wreck-diver/button_begin_dive_icon.png) no-repeat center bottom;
     background-size: 30% auto;
     width: 50%;
@@ -15,7 +28,22 @@
     border-radius: 1vh;
 }
 
+.body--wreck-driver .sidebar--popup .btn-close {
+	border-radius: 2vh;
+    background: rgba(2,95,27,0.9) url(../img/background/btn-close.png) no-repeat center center;
+    background-size: cover;
+    border: 1px solid #6bbc45;
+}
+
 .body--wreck-driver .learn-popup {
+	display: block;
+}
+
+.body--wreck-driver .learn-popup .learn-content {
+	display: none;
+}
+
+.body--wreck-driver .learn-popup .learn-content.active {
 	display: block;
 }
 
@@ -138,7 +166,7 @@
 
 .page--wreck-diver .adventure .part .part-item .description {
 	visibility: hidden;
-	border: 0.3vh solid rgba(11,57,26, 1);
+	border: 2px solid rgba(11,57,26, 1);
 	font-size: 1.5vh;
 	position: relative;
 	margin-bottom: 1.7vh;
@@ -197,7 +225,6 @@
 }
 
 .page--wreck-diver .adventure .part .part-item .description .explain {
-	display: table;
 	background: #fff;
 }
 
@@ -507,6 +534,11 @@
 .page--wreck-diver .collection .bag > div {
 	position: absolute;
 	opacity: 0.2;
+	pointer-events: none;
+}
+
+.page--wreck-diver .collection .bag > div[discover=true] {
+	pointer-events: auto;
 }
 
 .page--wreck-diver .collection .bag > div img {
@@ -514,6 +546,19 @@
 	height: auto;
 	-webkit-filter: invert(100%); /* Safari */
     filter: invert(100%);
+}
+
+.page--wreck-diver .collection .bag .bag__item--image {
+	position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3vh;
+    -webkit-filter: invert(0);
+    filter: invert(0);
+}
+
+.page--wreck-diver .collection .bag > div[data-dive=1] {
+	z-index: 1;
 }
 
 .dive-again-button {
@@ -534,21 +579,18 @@
     z-index: 1;
 }
 
-.still-image {
+.page--wreck-diver .adventure .still-image {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: 1;
+	background: url(../img/wreck-diver/Wreck_Diver_onDeck_BG.jpg) no-repeat 0 0;
+	background-size: cover;
 }
 
-.still-image__part8 {
-	background: url(../img/wreck-diver/journal_temporary.jpg) no-repeat 0 0;
-	background-size: contain;
-}
-
-.dive-complete-massage {
+.dive-complete-massage,
+.dive-incomplete-massage {
 	width: 40vh;
 	padding: 10px;
 	text-align: center;
@@ -562,12 +604,13 @@
 	color: #000;
 }
 
-.dive-complete-massage::after {
+.dive-complete-massage::after,
+.dive-incomplete-massage::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	transform: translate(98%, -100%);
+	transform: translate(98%, -50%);
 	width: 0;
 	height: 0;
 	border: 3vh solid #fff;
@@ -584,4 +627,197 @@
 @keyframes fade-in {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+/*============*/
+
+.journal {
+	display: none;
+	position: fixed;
+    height: 68vh;
+    width: calc(68vh * 2.1207386363636362);
+    top: 18vh;
+    right: 16vw;
+    border-radius: 10px;
+    background: url(../img/wreck-diver/popup_wreck_diver_bg.png) no-repeat 0 0;
+    background-size: cover;
+}
+
+.journal p {
+	margin-bottom: 10px;
+}
+
+.journal.active {
+	display: block;
+}
+
+.journal .attachment-image {
+    position: absolute;
+    right: 0;
+    top: 1.5vh;
+    background: url(../img/wreck-diver/image_note_bg.png) no-repeat 0 0;
+    background-size: contain;
+    width: 15vh;
+    height: 16vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.journal .attachment-image--src {
+    width: 9vh;
+    height: 10vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    transform: translate(5px, -5px);
+}
+
+.journal .left-side {
+    width: 27.5%;
+    float: left;
+    height: 100%;
+}
+
+.journal .left-side .item-detail {
+	width: 100%;
+	height: 41%;
+	padding: 4vh 1vw 3vh 1.5vw;
+}
+
+.journal .left-side .item-detail-label {
+	text-transform: uppercase;
+	margin-bottom: 1vh;
+    font-weight: bold;
+}
+
+.journal .left-side .item-detail-text {
+	font-size: 85%;
+}
+
+.journal .left-side .ship-detail {
+	width: 100%;
+    height: 59%;
+    padding: 2vh 1vw 3vh 1.5vw;
+    color: #fff;
+}
+
+.journal .left-side .ship-detail-label {
+	text-transform: uppercase;
+	margin-bottom: 1vh;
+}
+
+.journal .left-side .ship-detail-text {
+	font-size: 85%;
+}
+
+.journal .main-side {
+	float: left;
+    width: 72.5%;
+    height: 100%;
+    position: relative;
+}
+
+.journal .book {
+	height: 86%;
+	font-family: Kalam-Regular;
+	background: url(../img/wreck-diver/dive_assets.png) no-repeat 3.5vw 10vh;
+    background-size: 90%;
+}
+
+.journal .book .left-page {
+	display: none;
+	width: 47%;
+    height: 100%;
+    float: left;
+    padding: 5vh 1vw 3vh 2vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.journal .book .left-page .conditions-title {
+	text-transform: uppercase;
+    font-size: 130%;
+    margin-bottom: 0.5vh;
+}
+
+.journal .book .left-page .conditions-text {
+	font-size: 120%;
+}
+
+.journal .book .left-page .location {
+	background-image: url(../img/wreck-diver/discovery-position.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+    background-position: center center;
+	width: 100%;
+    height: 25vh;
+    position: relative;
+}
+
+.journal .book .left-page .location .location-point {
+    width: 2vh;
+    height: 2vh;
+    background: red;
+    border-radius: 1vh;
+    position: absolute;
+}
+
+.journal .book .right-page {
+	display: none;
+	width: 48%;
+    height: 100%;
+    float: left;
+    padding: 5vh 2vw 3vh 1vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.journal .book .right-page .item-title .item-title-label {
+	text-transform: uppercase;
+    font-size: 130%;
+}
+
+.journal .book .right-page .item-title .item-name {
+	font-size: 120%;
+}
+
+.journal .book .right-page .item-image {
+    width: 100%;
+    height: 70%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.journal .book .spine {
+	width: 5%;
+    height: 100%;
+    float: left;
+}
+
+.journal .footer {
+    height: 14%;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0 0 0 1vw;
+    width: 100%;
+}
+
+.journal .footer .footer-text {
+	font-size: 150%;
+}
+
+.journal .footer .btn-close {
+	border: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 8vh;
+    height: 7.5vh;
+    background-image: url(../img/button_close.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
 }
