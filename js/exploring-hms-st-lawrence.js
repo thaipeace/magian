@@ -64,6 +64,8 @@
         $(target).on($.modal.OPEN, function(event, modal) {
           _this.registerSlider(target);
           $('.close-modal').attr('tabindex', 1);
+          $('.exploring-hms--slider-content .sp-arrow.sp-previous-arrow').text('Back');
+          $('.exploring-hms--slider-content .sp-arrow.sp-next-arrow').text('Next');
         });
       });
     }
