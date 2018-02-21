@@ -16,10 +16,9 @@
 }
 
 .body--wreck-driver .sidebar--popup .btn-dive-now {
-    background: rgba(2,95,27,0.9) url(../img/wreck-diver/button_begin_dive_icon.png) no-repeat center bottom;
+    background: rgba(2,95,27,0.9) url(../img/wreck-diver/button_begin_dive_icon.png) no-repeat center 80%;
     background-size: 30% auto;
-    width: 50%;
-    height: 13%;
+    width: 35%;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -75,7 +74,6 @@
 	display: block;
 	animation-name: twinkles;
 	animation-duration: 1s;
-    animation-direction: linear;
 }
 
 .page--wreck-diver .adventure .part {
@@ -133,7 +131,6 @@
 .page--wreck-diver .adventure .part .part-item.active {
 	animation-name: fade-in;
 	animation-duration: 1s;
-    animation-direction: linear;
     display: block;
 }
 
@@ -504,18 +501,18 @@
 
 .page--wreck-diver .collection {
 	position: fixed;
-    top: 13vh;
+    top: 19vh;
     right: 0;
-    height: 87vh;
+    height: 81vh;
     background: rgba(11,57,26, 1);
     width: 14vw;
     border-left: 1px solid #fff;
     border-top: 1px solid #fff;
-    display: none;
+    visibility: hidden;
 }
 
 .page--wreck-diver .collection.active {
-	display: block;
+	visibility: visible;
 }
 
 .page--wreck-diver .collection .title {
@@ -541,11 +538,24 @@
 	pointer-events: auto;
 }
 
+.page--wreck-diver .collection .bag > div.active[discover=true] {
+	opacity: 1;
+	animation-name: twinkles;
+	animation-duration: 0.7s;
+    animation-iteration-count: 4;
+    background-color: rgba(11,57,26, 1);
+}
+
 .page--wreck-diver .collection .bag > div img {
 	width: 4.2vw;
 	height: auto;
 	-webkit-filter: invert(100%); /* Safari */
     filter: invert(100%);
+}
+
+.page--wreck-diver .collection .bag .item22 img:first-child,
+.page--wreck-diver .collection .bag .item101 img:first-child {
+	width: 3.5vw;
 }
 
 .page--wreck-diver .collection .bag .bag__item--image {
@@ -633,10 +643,10 @@
 
 .journal {
 	display: none;
-	position: fixed;
-    height: 68vh;
-    width: calc(68vh * 2.1207386363636362);
-    top: 18vh;
+    position: fixed;
+    height: 65vh;
+    width: calc(65vh * 2.1207386363636362);
+    top: 19vh;
     right: 16vw;
     border-radius: 10px;
     background: url(../img/wreck-diver/popup_wreck_diver_bg.png) no-repeat 0 0;
@@ -669,6 +679,7 @@
     height: 10vh;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center center;
     vertical-align: middle;
     transform: translate(5px, -5px);
 }
@@ -692,7 +703,7 @@
 }
 
 .journal .left-side .item-detail-text {
-	font-size: 85%;
+	font-size: 75%;
 }
 
 .journal .left-side .ship-detail {
@@ -708,7 +719,7 @@
 }
 
 .journal .left-side .ship-detail-text {
-	font-size: 85%;
+	font-size: 75%;
 }
 
 .journal .main-side {
@@ -735,7 +746,8 @@
     justify-content: space-between;
 }
 
-.journal .book .left-page .conditions-title {
+.journal .book .left-page .conditions-title,
+.journal .book .left-page .location-title {
 	text-transform: uppercase;
     font-size: 130%;
     margin-bottom: 0.5vh;
@@ -787,6 +799,18 @@
     height: 70%;
     background-size: cover;
     background-position: center center;
+    position: relative;
+}
+
+.journal .book .right-page .item-image__text {
+    position: absolute;
+    color: red;
+    text-shadow: 1px 1px 1px rgba(0,0,0,1);
+    font-weight: normal;
+    font-variant: small-caps;
+    color: #e20000;
+    font-size: 130%;
+    text-align: center;
 }
 
 .journal .book .spine {
@@ -820,4 +844,25 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: transparent;
+}
+
+@media (max-width: 1200px) {
+	.body--wreck-driver .sidebar--popup .btn-dive-now {
+		height: 9vh;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1366px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (max-width: 767px) {
+	.body--wreck-driver .sidebar--popup .btn-dive-now {
+		height: 7.5vh;
+	}
+}
+
+@media (max-width: 480px) {
 }

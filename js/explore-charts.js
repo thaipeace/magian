@@ -12,7 +12,8 @@
   };
 
   ExploreCharts.prototype.initTemplate = function() {
-    var isMobile = window.innerWidth < 768;
+    var _this = this;
+    var isMobile = window.innerWidth < 1200;
     var $information = $('.mysteries-depths--slider-information');
     var $thumbnailContainer = $('.mysteries-depths--slider-image');
 
@@ -23,6 +24,30 @@
       $thumbnailContainer.removeClass('sp-layer sp-static');
       $thumbnailContainer.removeAttr('data-position data-horizontal data-vertical data-width');
     }
+
+    $('.explore-charts--modal-content .tooltip').on('keypress', function(e) {
+      if(e.keyCode === 13) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var target = $(this).attr('data-modal');
+        if ($(target).closest('div.jquery-modal.blocker.current').length) {
+          $(target).modal("hide");
+        } else {
+          $(target).modal({
+            fadeDuration: 250,
+            fadeDelay: 1.5,
+            closeExisting: false,
+          });
+          $(target).on($.modal.OPEN, function(event, modal) {
+            _this.registerSlider(target);
+            $('.close-modal').attr('tabindex', 1);
+            $('.explore-charts-map-location-modal .sp-arrow.sp-previous-arrow').text('Back');
+            $('.explore-charts-map-location-modal .sp-arrow.sp-next-arrow').text('Next');
+          });
+        }        
+      }
+    });
   };
 
   ExploreCharts.prototype.openLearnPopup = function() {
@@ -70,13 +95,16 @@
 
         $(target).on($.modal.OPEN, function(event, modal) {
           _this.registerSlider(target);
+          $('.close-modal').attr('tabindex', 1);
+          $('.explore-charts-map-location-modal .sp-arrow.sp-previous-arrow').text('Back');
+          $('.explore-charts-map-location-modal .sp-arrow.sp-next-arrow').text('Next');
         });
       });
     }
   };
 
   ExploreCharts.prototype.registerSlider = function(element) {
-    var isMobile = window.innerWidth < 768;
+    var isMobile = window.innerWidth < 1200;
     $(element).sliderPro({
       width: '130vh',
       autoHeight: true,

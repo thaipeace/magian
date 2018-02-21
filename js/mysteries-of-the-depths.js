@@ -10,7 +10,7 @@
   };
 
   MysteriesDepths.prototype.initTemplate = function() {
-    var isMobile = window.innerWidth < 768;
+    var isMobile = window.innerWidth < 1200;
     var $information = $('.mysteries-depths--slider-information');
     var $thumbnailContainer = $('.mysteries-depths--slider-image');
 
@@ -41,13 +41,16 @@
         });
         $(target).on($.modal.OPEN, function(event, modal) {
           _this.registerSlider(target);
+          $('.close-modal').attr('tabindex', 1);
+          $('.mysteries-depths--slider-content .sp-arrow.sp-previous-arrow').text('Back');
+          $('.mysteries-depths--slider-content .sp-arrow.sp-next-arrow').text('Next');
         });
       });
     }
   };
 
   MysteriesDepths.prototype.registerSlider = function(element) {
-    var isMobile = window.innerWidth < 768;
+    var isMobile = window.innerWidth < 1200;
     $(element).sliderPro({
       width: isMobile ? '98%' : '130vh',
       autoHeight: true,

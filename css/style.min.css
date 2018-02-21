@@ -773,7 +773,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 7.5vh;
 }
 header {
-    height: 13vh;
+    height: 19vh;
     position: relative;
     z-index: 10;
 }
@@ -794,7 +794,6 @@ header .header .left-logo img {
     margin-top: 3%}
 header .header .title {
     float: left;
-    width: 66%;
     height: 100%;
     text-align: center;
     color: #fff;
@@ -853,14 +852,17 @@ header .header, header .sub-header {
 }
 header .header {
     border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
 }
 header .header .right-logo {
     width: auto;
 }
-header .header .right-logo img, header .header .left-logo img {
+header .header .right-logo img, 
+header .header .left-logo img {
     height: 60%;
     width: auto;
-    max-width: none;
+    max-width: 100%;
     top: 20%;
     position: relative;
 }
@@ -1161,12 +1163,15 @@ section.menu li.double {
     background: url("../img/explore-charts/explore-map-one.png") no-repeat right bottom;
     background-size: cover;
     cursor: pointer;
-    height: 74vh;
-    width: 104vh;
+    height: calc(49vw * 0.7115);
+    width: 49vw;
     position: absolute;
     top: 12vh;
     left: 0;
     z-index: 3;
+}
+.page--explore-charts .left-box:focus {
+	border: 1px dotted #ccc;
 }
 .page--explore-charts .left-box:before {
     background: url("../img/explore-charts/explore-map-one-hover.png") no-repeat right bottom;
@@ -1197,8 +1202,8 @@ section.menu li.double {
 .page--explore-charts .left-box-icon-two {
     background: url("../img/explore-charts/chart-graphic-parallel-rule.png") no-repeat 0 0;
     background-size: cover;
-    height: 26.35vh;
-    width: 49.3vh;
+    height: calc(27.5vw * 0.53448);
+    width: 27.5vw;
     position: absolute;
     bottom: 0;
     left: 22vh;
@@ -1208,14 +1213,19 @@ section.menu li.double {
     background: url("../img/explore-charts/explore-map-two.png") no-repeat 0 0;
     background-size: cover;
     cursor: pointer;
-    height: 75.5vh;
-    width: 96vh;
+    height: calc(46vw * 0.7864);
+    width: 46vw;
     position: absolute;
     top: 22vh;
     right: 0;
     overflow: hidden;
     z-index: 2;
 }
+
+.page--explore-charts .right-box:focus {
+	border: 1px dotted #ccc;
+}
+
 .page--explore-charts .right-box:before {
     background: url("../img/explore-charts/explore-map-two-hover.png") no-repeat 0 0;
     background-size: cover;
@@ -1747,7 +1757,7 @@ section.menu li.double {
     right: 0.6em;
     bottom: 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     .page--exploring-hms-lawrence .one {
 	    width: 38vh;
 	    height: 23vh;
@@ -1760,7 +1770,7 @@ section.menu li.double {
 	}
 	.page--exploring-hms-lawrence .three {
 	    top: 42vh;
-	    left: 10vh;
+	    left: 2vh;
 	    width: 21.8vh;
 	    height: 19vh;
 	    z-index: 2;
@@ -1796,56 +1806,7 @@ section.menu li.double {
 	    height: 33vh;
 	}
 }
-@media (max-width: 1024px) {
-    .page--exploring-hms-lawrence .one {
-	    width: 38vh;
-	    height: 23vh;
-	    top: 18vh;
-	    left: 3vh;
-	}
-	.page--exploring-hms-lawrence .two {
-	    left: 0vh;
-	    top: -10vh;
-	    max-width: 90vw;
-	}
-	.page--exploring-hms-lawrence .three {
-	    top: 45vh;
-	    left: 25vh;
-	    width: 21.8vh;
-	    height: 19vh;
-	    z-index: 2;
-	}
-	.page--exploring-hms-lawrence .four {
-	    bottom: 1vh;
-	    left: 4vh;
-	    width: 34vh;
-	    height: 22vh;
-	}
-	.page--exploring-hms-lawrence .five {
-	    top: 10vh;
-	    right: 0;
-	    width: 48vh;
-	    height: 22vh;
-	}
-	.page--exploring-hms-lawrence .six {
-	    top: 30vh;
-	    right: 10vh;
-	    width: 35vh;
-	    height: 24vh;
-	}
-	.page--exploring-hms-lawrence .sevent {
-	    top: 22vh;
-	    right: -2vh;
-	    width: 24vh;
-	    height: 48vh;
-	}
-	.page--exploring-hms-lawrence .eight {
-	    bottom: 0;
-	    right: 8vh;
-	    width: 21vh;
-	    height: 33vh;
-	}
-}
+
 @media (min-width: 479px) {
     .page--exploring-hms-lawrence-modal {
 	    max-width: 124vh;
@@ -1956,7 +1917,7 @@ body .jquery-modal, body .blocker {
     margin-left: 60px;
 }
 .mysteries-depths--slider-information {
-    padding: 4vh 4vh 0;
+    padding: 4vh 2vw 0;
 }
 .mysteries-depths--slider-information .mysteries-depths--slider-title {
     margin-bottom: 10px;
@@ -1985,6 +1946,14 @@ body .jquery-modal, body .blocker {
 .body--mysteries .container {
     max-width: none;
 }
+
+.block--mysteries-depths-anchors {
+	position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
 .block--mysteries-depths-anchors ul {
     list-style: none;
 }
@@ -1994,8 +1963,11 @@ body .jquery-modal, body .blocker {
     display: block;
     color: transparent;
     max-width: 100%;
-    position: absolute;
-    left: 50%}
+    position: relative;
+    margin: 0 auto;
+    /*position: absolute;
+    left: 50%}*/
+}
 .mysteries-depths--link:after {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity =0)";
     filter: alpha(opacity=0);
@@ -2019,10 +1991,8 @@ body .jquery-modal, body .blocker {
 }
 .mysteries-depths--link.first {
     background-image: url("../img/mysteries-depths/button_mysteries_edmund_fitzgerald.png");
-    height: 18.09vh;
-    width: 118vh;
-    bottom: 60.5vh;
-    margin-left: -59vh;
+    height: calc(62vw * 0.1533);
+    width: 62vw;
     z-index: 9;
 }
 .mysteries-depths--link.first:after {
@@ -2030,10 +2000,8 @@ body .jquery-modal, body .blocker {
 }
 .mysteries-depths--link.second {
     background-image: url("../img/mysteries-depths/button_mysteries_le_Griffon.png");
-    height: 11.27vh;
-    width: 120vh;
-    bottom: 50vh;
-    margin-left: -60vh;
+    height: calc(63vw * 0.0939);
+    width: 63vw;
     z-index: 8;
 }
 .mysteries-depths--link.second:after {
@@ -2041,10 +2009,9 @@ body .jquery-modal, body .blocker {
 }
 .mysteries-depths--link.third {
     background-image: url("../img/mysteries-depths/button_mysteries_bannockburn.png");
-    height: 19.81vh;
-    width: 138vh;
-    bottom: 32vh;
-    margin-left: -69vh;
+    height: calc(64.5vw * 0.14355);
+    width: 64.5vw;
+    left: 1.5vw;
     z-index: 5;
 }
 .mysteries-depths--link.third:after {
@@ -2052,10 +2019,9 @@ body .jquery-modal, body .blocker {
 }
 .mysteries-depths--link.four {
     background-image: url("../img/mysteries-depths/button_mysteries_book_bottom.png");
-    height: 32.18vh;
-    width: 160vh;
-    bottom: 0;
-    margin-left: -90.5vh;
+    height: calc(74.6vw * 0.201125);
+    width: 74.6vw;
+    left: -3.9vw;
 }
 @media (max-width: 767px) {
     .body--mysteries {
@@ -2138,12 +2104,24 @@ body .jquery-modal, body .blocker {
 	margin-bottom: 15px;
 }
 
+.explore-charts--header-right p:last-child {
+	margin-bottom: 0;
+}
+
 .mysteries-depths--slider-information p {
-	margin-bottom: 15px;
+	margin-bottom: 2%;
+}
+
+.mysteries-depths--slider-information p:last-child {
+	margin-bottom: 0;
 }
 
 .credits .container p {
 	margin-bottom: 15px;
+}
+
+.credits .container p:last-child {
+	margin-bottom: 0;
 }
 
 .body--sitemap,
@@ -2208,7 +2186,7 @@ header .sub-header .lang a.active {
 header .header .title a {
     color: #fff;
     font-family: 'Amiri', serif;
-    font-size: 5vh;
+    font-size: 2.8vw;
     line-height: 7vh;
     text-decoration: none;
 }
@@ -2236,7 +2214,7 @@ header .sub-header .menu ul {
 header .sub-header .menu a {
 	color: rgba(11,57,26, 1);	
 	line-height: 3vh;
-	font-size: 2.5vh;
+	font-size: 1.3vw;
 	padding: 0 1vw;
 	border: none;
 }
@@ -2661,7 +2639,7 @@ a.close-modal:focus {
 	border: 1px dotted #ccc;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
 	.content {
 	    padding-bottom: 0;
 	}
@@ -2681,17 +2659,12 @@ a.close-modal:focus {
 		font-size: 3vh;
 	}
 
-	.body--mysteries {
-    	background: url(../img/mysteries-depths/smartphone-mysteries-of-the-depth-bg.jpg) no-repeat center bottom;
-    	background-size: contain;
-	}
-
 	.page--exploring-hms-lawrence .five {
 	    right: 24vh;
 	}
 
 	.page--exploring-hms-lawrence .six {
-	    right: 40vh;
+	    right: 22vh;
 	}
 
 	.page--exploring-hms-lawrence .sevent {
@@ -2724,42 +2697,6 @@ a.close-modal:focus {
 
 	.mysteries-depths--slider-information .mysteries-depths--slider-title {
 		padding-right: 20px;
-	}
-
-	.mysteries-depths--slider-image {
-		border-top: 1px solid #fff;
-		margin-top: 10px;
-	}
-
-	.block--mysteries-depths-anchors .mysteries-depths--link {
-		left: 0;
-		margin-left: 0;
-		max-width: 100%;
-		background: none !important;
-	}
-
-	.block--mysteries-depths-anchors .mysteries-depths--link:hover::after {
-		background: none !important;
-	}
-
-	.mysteries-depths--link.first {
-	    height: 71px;
-    	bottom: 58vh;
-	}
-
-	.mysteries-depths--link.second {
-	    height: 50px;
-    	bottom: 50vh;
-	}
-
-	.mysteries-depths--link.third {
-    	height: 50px;
-    	bottom: 39vh;
-	}
-
-	.mysteries-depths--link.four {
-    	height: 75px;
-    	bottom: 280px;
 	}
 
 	.exploring-hms--slider-content .sp-arrows,
@@ -2883,6 +2820,7 @@ a.close-modal:focus {
 
 	header .sub-header .menu a {
 		text-align: left;
+		font-size: 2vh;
 	}
 
 	header .sub-header .menu > ul > li {
@@ -2924,19 +2862,24 @@ a.close-modal:focus {
 		display: none;
 	}
 
-	.explore, .learn, .help {
-		width: 18vw;
+	header .sub-header .menu ul li a:hover,
+	header .sub-header .menu ul li a:focus {
+		font-weight: bold;
+	}
+
+	header .sub-header .menu > ul > li:hover > a::after,
+	header .sub-header .menu > ul > li:focus-within > a:after {
+		display: none;
 	}
 
 	.sidebar--popup.learn-popup,
 	.sidebar--popup.help-popup {
-		left: 19vw;
 		width: 80vw;
+		max-width: 100vh;
 	}
 
 	.body--index .sidebar--popup.learn-popup {
 		top: 14vh;
-	    width: 80vw;
 	}
 
 	.sidebar--popup.learn-popup h2, 
@@ -3021,15 +2964,9 @@ a.close-modal:focus {
 	.content.credits .container {
 		margin-left: 10%;
 	}
-}
 
-@media (min-width: 768px) and (max-width: 1024px) {
 	.page--exploring-hms-lawrence .five {
 	    right: 0vh;
-	}
-
-	.page--exploring-hms-lawrence .six {
-	    right: 40vh;
 	}
 
 	.page--exploring-hms-lawrence .sevent {
@@ -3047,10 +2984,6 @@ a.close-modal:focus {
 	header .sub-title {
 	    position: absolute;
 	    width: 100vw;
-	}
-
-	header .sub-header {
-		height: auto;
 	}
 
 	.body--index .sidebar--popup.learn-popup::after {
@@ -3072,6 +3005,10 @@ a.close-modal:focus {
 		height: auto;
 	}
 
+	header .header .right-logo a img {
+		height: 60%;
+	}
+
 	.learn,
 	.sidebar--popup.learn-popup {
 		top: 23vh;
@@ -3083,7 +3020,7 @@ a.close-modal:focus {
 	}
 }
 
-@media (min-width: 992px) and (max-width: 1366px) {
+@media (min-width: 1200px) and (max-width: 1366px) {
 	header .sub-header .menu a {
 		font-size: 2vh;
 	}
@@ -3099,4 +3036,117 @@ a.close-modal:focus {
 	.navi-area > div.active .tooltip a {
 		pointer-events: auto;
 	}
+}
+
+@media (min-width: 1200px) {
+	.page--exploring-hms-lawrence .one {
+	    top: 9vh;
+	    left: 5.6vw;
+	    width: 36.6vw;
+	    height: 24.04vw;
+	}
+	
+	.page--exploring-hms-lawrence .two {
+	    top: 0vh;
+	    left: 23.52vw;
+	    width: 43.78vw;
+	    height: 17.15vw;
+	}
+	
+	.page--exploring-hms-lawrence .three {
+	    top: 32vh;
+	    left: 29.12vw;
+	    width: 19.1vw;
+	    height: 17.1vw;
+	}
+	
+	.page--exploring-hms-lawrence .four {
+	    top: 50vh;
+	    left: 7.84vw;
+	    width: 30.6vw;
+	    height: 21.2vw;
+	}
+	
+	.page--exploring-hms-lawrence .five {
+	    top: 21vh;
+	    right: 24.64vw;
+	    width: 37.7vw;
+	    height: 17.2vw;
+	}
+	
+	.page--exploring-hms-lawrence .six {
+	    top: 46vh;
+	    right: 33.6vw;
+	    width: 32.7vw;
+	    height: 22.1vw;
+	}
+	
+	.page--exploring-hms-lawrence .sevent {
+	    top: 14vh;
+	    right: 12.32vw;
+	    width: 17.8vw;
+	    height: 38.3vw;
+	}
+	
+	.page--exploring-hms-lawrence .eight {
+	    top: 40vh;
+	    right: 16.6vw;
+	    width: 15.8vw;
+	    height: 24.7vw;
+	}
+}
+
+@media (max-width: 480px) {
+	.page--exploring-hms-lawrence .six {
+	    right: 15vh;
+	}
+}
+
+@media (max-width: 767px) {
+	.mysteries-depths--slider-image {
+		border-top: 1px solid #fff;
+		margin-top: 10px;
+	}
+
+	.body--mysteries {
+    	background: url(../img/mysteries-depths/smartphone-mysteries-of-the-depth-bg.jpg) no-repeat center bottom;
+    	background-size: contain;
+	}
+
+	.block--mysteries-depths-anchors {
+		position: relative;
+		left: unset;
+		transform: translateX(0);
+		bottom: unset;
+		top: 12vh;
+	}
+
+	.block--mysteries-depths-anchors .mysteries-depths--link {
+		left: 0;
+		margin-left: 0;
+		max-width: 100%;
+		background: none !important;
+		width: 100%;
+	}
+
+	.block--mysteries-depths-anchors .mysteries-depths--link:hover::after {
+		background: none !important;
+	}
+
+	.mysteries-depths--link.first {
+	    height: 11vh;
+	}
+
+	.mysteries-depths--link.second {
+	    height: 9vh;
+	}
+
+	.mysteries-depths--link.third {
+    	height: 13vh;
+	}
+
+	.mysteries-depths--link.four {
+    	height: 11vh;
+	}
+
 }

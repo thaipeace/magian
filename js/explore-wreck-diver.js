@@ -30,7 +30,7 @@ var itemsPartDefaultPosition = {
 	},
 	'.part6': {
 		'.part6-item1': 'top: 25vh; left: 57vw;',
-		'.part6-item2': 'top: 13vh; left: 27vw;',
+		//'.part6-item2': 'top: 13vh; left: 27vw;',
 		'.part6-item3': 'top: 46vh; left: 32vw;',
 		'.part6-item4': 'top: 56vh; left: 69vw;'
 	},
@@ -96,6 +96,8 @@ $(document).ready(function() {
 
 	$('.body--wreck-driver .btn-dive-now').click(function(event){
 		//MainService.startAudio();
+		$('.learn').removeClass('active');
+		$('.help').removeClass('active');
 		var activeDive = getActiveDive();
 
 		if (activeDive === '2') {
@@ -179,8 +181,25 @@ $(document).ready(function() {
 		disableAllDescription();
 	});
 
-	$('.page--wreck-diver .adventure .control .navigation > div').on('click', function(event){
-		moveBackgroud($(this).attr('id'));
+	var flag = true;
+	$('.navigation > div, .navigation > div img', '.page--wreck-diver .adventure .control').on('mousedown touchstart', function(event){
+		if (!flag) return;
+		var direction = event.target.tagName === 'IMG' ? 
+			$(event.target).parent().attr('id') :
+		 	$(event.target).attr('id');
+
+		moveBackgroud(direction);
+		
+		window.moveBackgroundInterval = setInterval(function(){
+			moveBackgroud(direction);
+		},500);
+
+		flag = false;
+	});
+
+	$('.navigation > div, .navigation > div img', '.page--wreck-diver .adventure .control').on('mouseup mouseleave touchend', function(event){
+		window.clearInterval(window.moveBackgroundInterval);
+		flag = true;
 	});
 
 	navigationKeyBoardSupport();
@@ -264,9 +283,14 @@ function playPartHeadToSurface() {
 			activatePart('.part-journal');
 			$('.learn-popup').show();
 			$('.learn-popup .learn-content.to-journal').addClass('active');
+			$('button.learn').addClass('active');
 			$('.learn-popup .learn-content.to-restart').removeClass('active');
 			$('.learn-popup .to-journal .close-menu').text('');
-			setActiveDive(parseInt(activeDive) + 1);
+
+			if (parseInt(activeDive) < 2) {
+				setActiveDive(parseInt(activeDive) + 1);	
+			}
+			
 		}else {
 			if (activeDive === "1") {
 		       	activatePart('.part1');
@@ -323,16 +347,17 @@ function handleEndOfFirstVideo(video) {
 
 function setupCollectingEvent() {
 	$('.page--wreck-diver .adventure .part .part-item.active .twinkles').on('click', function(event) {
+		event.stopPropagation();
 		$(this).css({
 			'animation-name': 'stop-it',
 			background: 'none'
 		});
 
 		$('img', event.target).show();
+		$('img', event.target).trigger('click');
 	});
 
 	$('.page--wreck-diver .adventure .part .part-item.active .twinkles img').on('click', function(event) {
-		event.stopPropagation();
 		var parentContext = $(this).parent().parent();
 		disableAllDescription()
 		$('.description', parentContext).css({
@@ -341,7 +366,13 @@ function setupCollectingEvent() {
 		});
 
 		var itemInCollectionClass = $('.twinkles', parentContext).data('target');
-		$('.' + itemInCollectionClass, '.collection').attr('discover', true).css('opacity', 1);
+		$('.' + itemInCollectionClass, '.collection').attr('discover', true);
+
+		var dublicateItems = getAllDublicateItems(itemInCollectionClass);
+		dublicateItems.forEach(function(item) {
+			$(item).removeClass('active');
+		});
+		$(dublicateItems[dublicateItems.length-1]).addClass('active');
 
 		if (isLastStillOfEachDiveActive()) {
 			checkAllTwinklesInLastStillOpened();
@@ -356,6 +387,15 @@ function setupCollectingEvent() {
 		}
 		
 		window.clearInterval(window.oxyVolumeDes);
+	});
+}
+
+function getAllDublicateItems(itemInCollectionClass) {
+	var top = $('.' + itemInCollectionClass, '.collection').css('top');
+	var left = $('.' + itemInCollectionClass, '.collection').css('left');
+
+	return $('[discover=true]', '.collection').toArray().filter(function(item){
+		return $(item).css('top') === top && $(item).css('left') === left;
 	});
 }
 

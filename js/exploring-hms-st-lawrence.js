@@ -11,7 +11,7 @@
   };
 
   ExploreHmsLawrence.prototype.initTemplate = function() {
-    var isMobile = window.innerWidth < 768;
+    var isMobile = window.innerWidth < 1200;
     var $information = $('.mysteries-depths--slider-information');
     var $thumbnailContainer = $('.mysteries-depths--slider-image');
 
@@ -72,7 +72,7 @@
   };
 
   ExploreHmsLawrence.prototype.registerSlider = function(element) {
-    var isMobile = window.innerWidth < 768;
+    var isMobile = window.innerWidth < 1200;
     $(element).sliderPro({
       width: isMobile ? '98%' : '130vh',
       autoHeight: true,
